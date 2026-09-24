@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_delevery_app/features/onboarding/presentation/pages/onboarding_page.dart';
 import '../../../home/presentation/pages/home_page.dart';
 import 'signup_page.dart';
 import 'forgot_password_page.dart';
@@ -175,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const HomePage(),
+                                  builder: (context) => const OnboardingPage(),
                                 ),
                               );
                             },

@@ -31,58 +31,49 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            18,
-            0,
-            18,
-            0,
-          ),
-          child: Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(14),
-                topRight: Radius.circular(14),
-              ),
+        child: Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(14),
+              topRight: Radius.circular(14),
             ),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                14,
-                28,
-                14,
-                10,
-              ),
-              child: Column(
-                crossAxisAlignment:
-                CrossAxisAlignment.start,
-                children: [
-                  _buildHeader(),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              18,
+              24,
+              18,
+              10,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildHeader(),
 
-                  const SizedBox(height: 18),
+                const SizedBox(height: 20),
 
-                  _buildSearch(),
+                _buildSearch(),
 
-                  const SizedBox(height: 18),
+                const SizedBox(height: 20),
 
-                  _buildRecentKeywords(),
+                _buildRecentKeywords(),
 
-                  const SizedBox(height: 20),
+                const SizedBox(height: 22),
 
-                  _buildSuggestedRestaurants(),
+                _buildSuggestedRestaurants(),
 
-                  const SizedBox(height: 20),
+                const SizedBox(height: 22),
 
-                  _buildPopularTitle(),
+                _buildPopularTitle(),
 
-                  const SizedBox(height: 12),
+                const SizedBox(height: 14),
 
-                  Expanded(
-                    child: _buildSearchResults(),
-                  ),
-                ],
-              ),
+                Expanded(
+                  child: _buildSearchResults(),
+                ),
+              ],
             ),
           ),
         ),
@@ -98,15 +89,15 @@ class _SearchPageState extends State<SearchPage> {
             Navigator.pop(context);
           },
           child: Container(
-            width: 34,
-            height: 34,
+            width: 40,
+            height: 40,
             decoration: const BoxDecoration(
               color: Color(0xFFF1F3F5),
               shape: BoxShape.circle,
             ),
             child: const Icon(
               Icons.arrow_back_ios_new,
-              size: 14,
+              size: 17,
             ),
           ),
         ),
@@ -116,16 +107,17 @@ class _SearchPageState extends State<SearchPage> {
         const Text(
           'Search',
           style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
 
         const Spacer(),
 
         Container(
-          width: 34,
-          height: 34,
+          width: 40,
+          height: 40,
           decoration: const BoxDecoration(
             color: Color(0xFF20242F),
             shape: BoxShape.circle,
@@ -136,7 +128,7 @@ class _SearchPageState extends State<SearchPage> {
                 child: Icon(
                   Icons.shopping_bag_outlined,
                   color: Colors.white,
-                  size: 18,
+                  size: 20,
                 ),
               ),
 
@@ -144,8 +136,8 @@ class _SearchPageState extends State<SearchPage> {
                 top: 0,
                 right: 0,
                 child: Container(
-                  width: 16,
-                  height: 16,
+                  width: 18,
+                  height: 18,
                   decoration: const BoxDecoration(
                     color: Color(0xFFFF7622),
                     shape: BoxShape.circle,
@@ -155,7 +147,7 @@ class _SearchPageState extends State<SearchPage> {
                       '2',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 8,
+                        fontSize: 9,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -171,10 +163,10 @@ class _SearchPageState extends State<SearchPage> {
 
   Widget _buildSearch() {
     return Container(
-      height: 43,
+      height: 48,
       decoration: BoxDecoration(
         color: const Color(0xFFF5F5F5),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(9),
       ),
       child: TextField(
         controller: searchController,
@@ -185,19 +177,22 @@ class _SearchPageState extends State<SearchPage> {
             SearchFood(value),
           );
         },
+        style: const TextStyle(
+          fontSize: 13,
+          color: Color(0xFF20242F),
+        ),
         decoration: InputDecoration(
           hintText: 'Search dishes, restaurants',
           hintStyle: const TextStyle(
-            fontSize: 10,
+            fontSize: 12,
             color: Color(0xFF9BA5BC),
           ),
           prefixIcon: const Icon(
             Icons.search,
-            size: 17,
+            size: 20,
             color: Color(0xFF9BA5BC),
           ),
-          suffixIcon:
-          searchController.text.isEmpty
+          suffixIcon: searchController.text.isEmpty
               ? null
               : IconButton(
             onPressed: () {
@@ -211,11 +206,14 @@ class _SearchPageState extends State<SearchPage> {
             },
             icon: const Icon(
               Icons.cancel,
-              size: 16,
+              size: 18,
               color: Color(0xFFC5C5C5),
             ),
           ),
           border: InputBorder.none,
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 14,
+          ),
         ),
       ),
     );
@@ -223,21 +221,21 @@ class _SearchPageState extends State<SearchPage> {
 
   Widget _buildRecentKeywords() {
     return Column(
-      crossAxisAlignment:
-      CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
           'Recent Keywords',
           style: TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
 
-        const SizedBox(height: 9),
+        const SizedBox(height: 11),
 
         SizedBox(
-          height: 34,
+          height: 38,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
@@ -258,8 +256,7 @@ class _SearchPageState extends State<SearchPage> {
         if (text == 'Burger' ||
             text == 'Pizza' ||
             text == 'Hot Dog') {
-          final homeBloc =
-          context.read<HomeBloc>();
+          final homeBloc = context.read<HomeBloc>();
 
           Navigator.push(
             context,
@@ -288,24 +285,25 @@ class _SearchPageState extends State<SearchPage> {
       },
       child: Container(
         margin: const EdgeInsets.only(
-          right: 8,
+          right: 9,
         ),
         padding: const EdgeInsets.symmetric(
-          horizontal: 13,
-          vertical: 8,
+          horizontal: 15,
+          vertical: 9,
         ),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
             color: const Color(0xFFE5E5E5),
           ),
-          borderRadius:
-          BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(22),
         ),
         child: Text(
           text,
           style: const TextStyle(
-            fontSize: 10,
+            fontSize: 11,
+            color: Color(0xFF4F5663),
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),
@@ -314,18 +312,18 @@ class _SearchPageState extends State<SearchPage> {
 
   Widget _buildSuggestedRestaurants() {
     return Column(
-      crossAxisAlignment:
-      CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
           'Suggested Restaurants',
           style: TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
 
-        const SizedBox(height: 8),
+        const SizedBox(height: 9),
 
         _restaurant(
           'Pansi Restaurant',
@@ -364,7 +362,7 @@ class _SearchPageState extends State<SearchPage> {
         );
       },
       child: Container(
-        height: 48,
+        height: 54,
         decoration: const BoxDecoration(
           border: Border(
             bottom: BorderSide(
@@ -375,52 +373,49 @@ class _SearchPageState extends State<SearchPage> {
         child: Row(
           children: [
             Container(
-              width: 40,
-              height: 32,
+              width: 46,
+              height: 36,
               decoration: BoxDecoration(
-                color:
-                const Color(0xFF9BAFC0),
-                borderRadius:
-                BorderRadius.circular(5),
+                color: const Color(0xFF9BAFC0),
+                borderRadius: BorderRadius.circular(6),
               ),
             ),
 
-            const SizedBox(width: 8),
+            const SizedBox(width: 10),
 
             Expanded(
               child: Column(
-                mainAxisAlignment:
-                MainAxisAlignment.center,
-                crossAxisAlignment:
-                CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     name,
                     maxLines: 1,
-                    overflow:
-                    TextOverflow.ellipsis,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 10,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF20242F),
                     ),
                   ),
 
-                  const SizedBox(height: 2),
+                  const SizedBox(height: 3),
 
                   Row(
                     children: [
                       const Icon(
                         Icons.star,
-                        color:
-                        Color(0xFFFF7622),
-                        size: 12,
+                        color: Color(0xFFFF7622),
+                        size: 14,
                       ),
 
-                      const SizedBox(width: 2),
+                      const SizedBox(width: 3),
 
                       Text(
                         rating,
                         style: const TextStyle(
-                          fontSize: 9,
+                          fontSize: 10,
+                          color: Color(0xFF737B8C),
                         ),
                       ),
                     ],
@@ -447,8 +442,9 @@ class _SearchPageState extends State<SearchPage> {
         return Text(
           title,
           style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         );
       },
@@ -469,7 +465,7 @@ class _SearchPageState extends State<SearchPage> {
             child: Text(
               'No food found',
               style: TextStyle(
-                fontSize: 11,
+                fontSize: 13,
                 color: Colors.grey,
               ),
             ),
@@ -484,9 +480,9 @@ class _SearchPageState extends State<SearchPage> {
           gridDelegate:
           const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 0.85,
+            crossAxisSpacing: 14,
+            mainAxisSpacing: 14,
+            childAspectRatio: 0.82,
           ),
           itemBuilder: (context, index) {
             final food = state.foods[index];
@@ -504,56 +500,51 @@ class _SearchPageState extends State<SearchPage> {
         _openFoodDetails(food);
       },
       child: Container(
-        padding: const EdgeInsets.all(7),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius:
-          BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(13),
           boxShadow: [
             BoxShadow(
-              color:
-              Colors.black.withOpacity(0.05),
+              color: Colors.black.withOpacity(0.05),
               blurRadius: 8,
             ),
           ],
         ),
         child: Column(
-          crossAxisAlignment:
-          CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius:
-              BorderRadius.circular(9),
+              borderRadius: BorderRadius.circular(10),
               child: Image.asset(
                 food.image,
                 width: double.infinity,
-                height: 58,
+                height: 68,
                 fit: BoxFit.cover,
               ),
             ),
 
-            const SizedBox(height: 5),
+            const SizedBox(height: 7),
 
             Text(
               food.name,
               maxLines: 1,
-              overflow:
-              TextOverflow.ellipsis,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 9,
+                fontSize: 11,
                 fontWeight: FontWeight.bold,
+                color: Color(0xFF20242F),
               ),
             ),
 
-            const SizedBox(height: 2),
+            const SizedBox(height: 3),
 
             Text(
               food.restaurant,
               maxLines: 1,
-              overflow:
-              TextOverflow.ellipsis,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 8,
+                fontSize: 10,
                 color: Color(0xFF9BA5BC),
               ),
             ),
@@ -565,25 +556,25 @@ class _SearchPageState extends State<SearchPage> {
                 Text(
                   '\$${food.price.toStringAsFixed(0)}',
                   style: const TextStyle(
-                    fontSize: 9,
+                    fontSize: 11,
                     fontWeight: FontWeight.bold,
+                    color: Color(0xFF20242F),
                   ),
                 ),
 
                 const Spacer(),
 
                 Container(
-                  width: 19,
-                  height: 19,
-                  decoration:
-                  const BoxDecoration(
+                  width: 22,
+                  height: 22,
+                  decoration: const BoxDecoration(
                     color: Color(0xFFFF8A3D),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
                     Icons.add,
                     color: Colors.white,
-                    size: 13,
+                    size: 15,
                   ),
                 ),
               ],

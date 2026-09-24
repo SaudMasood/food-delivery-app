@@ -4,6 +4,8 @@ abstract class TrackingState {}
 
 class TrackingInitial extends TrackingState {}
 
+class TrackingLoading extends TrackingState {}
+
 class TrackingLoaded extends TrackingState {
   final TrackingModel order;
   final bool showDetails;

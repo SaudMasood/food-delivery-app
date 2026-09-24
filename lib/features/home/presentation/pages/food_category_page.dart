@@ -20,9 +20,7 @@ class FoodCategoryPage extends StatefulWidget {
       _FoodCategoryPageState();
 }
 
-class _FoodCategoryPageState
-    extends State<FoodCategoryPage> {
-
+class _FoodCategoryPageState extends State<FoodCategoryPage> {
   @override
   void initState() {
     super.initState();
@@ -38,59 +36,51 @@ class _FoodCategoryPageState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
-
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            const Padding(
-              padding: EdgeInsets.fromLTRB(
-                18,
-                6,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
                 18,
                 8,
+                18,
+                10,
               ),
               child: Text(
-                'Food - Burgers',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFB8B8B8),
+                'Food - ${widget.category}s',
+                style: const TextStyle(
+                  fontSize: 17,
+                  color: Color(0xFF9BA5BC),
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
 
             Expanded(
               child: Container(
-                margin: const EdgeInsets.fromLTRB(
-                  9,
-                  0,
-                  9,
-                  0,
-                ),
-
+                width: double.infinity,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(14),
-                    topRight: Radius.circular(14),
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
                   ),
                 ),
-
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(
-                    15,
-                    14,
-                    15,
+                    18,
+                    18,
+                    18,
                     0,
                   ),
-
                   child: BlocBuilder<HomeBloc, HomeState>(
                     builder: (context, state) {
-
                       if (state is! HomeLoaded) {
                         return const Center(
-                          child: CircularProgressIndicator(),
+                          child: CircularProgressIndicator(
+                            color: Color(0xFFFF7622),
+                          ),
                         );
                       }
 
@@ -99,35 +89,35 @@ class _FoodCategoryPageState
                           crossAxisAlignment:
                           CrossAxisAlignment.start,
                           children: [
-
                             _buildHeader(),
 
-                            const SizedBox(height: 17),
+                            const SizedBox(height: 20),
 
                             Text(
                               'Popular ${widget.category}s',
                               style: const TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF20242F),
                               ),
                             ),
 
-                            const SizedBox(height: 12),
+                            const SizedBox(height: 14),
 
                             _buildFoods(
                               context,
                               state,
                             ),
 
-                            const SizedBox(height: 18),
+                            const SizedBox(height: 24),
 
                             _buildRestaurantTitle(),
 
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 12),
 
                             _buildRestaurant(),
 
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 24),
                           ],
                         ),
                       );
@@ -145,62 +135,55 @@ class _FoodCategoryPageState
   Widget _buildHeader() {
     return Row(
       children: [
-
         GestureDetector(
           onTap: () {
             Navigator.pop(context);
           },
-
           child: Container(
-            width: 34,
-            height: 34,
-
+            width: 40,
+            height: 40,
             decoration: const BoxDecoration(
               color: Color(0xFFF1F3F5),
               shape: BoxShape.circle,
             ),
-
             child: const Icon(
               Icons.arrow_back_ios_new,
-              size: 14,
+              size: 17,
             ),
           ),
         ),
 
-        const SizedBox(width: 12),
+        const SizedBox(width: 14),
 
         Container(
-          height: 34,
-
+          height: 40,
           padding: const EdgeInsets.symmetric(
-            horizontal: 12,
+            horizontal: 15,
           ),
-
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(22),
             border: Border.all(
-              color: const Color(0xFFE8E8E8),
+              color: const Color(0xFFE5E5E5),
             ),
           ),
-
           child: Row(
             children: [
-
               Text(
                 widget.category.toUpperCase(),
                 style: const TextStyle(
-                  fontSize: 8,
+                  fontSize: 11,
                   fontWeight: FontWeight.bold,
+                  color: Color(0xFF20242F),
                 ),
               ),
 
-              const SizedBox(width: 4),
+              const SizedBox(width: 5),
 
               const Icon(
                 Icons.arrow_drop_down,
                 color: Color(0xFFFF7622),
-                size: 14,
+                size: 18,
               ),
             ],
           ),
@@ -213,7 +196,7 @@ class _FoodCategoryPageState
           false,
         ),
 
-        const SizedBox(width: 8),
+        const SizedBox(width: 9),
 
         _buildCircleButton(
           Icons.tune,
@@ -228,19 +211,17 @@ class _FoodCategoryPageState
       bool light,
       ) {
     return Container(
-      width: 34,
-      height: 34,
-
+      width: 40,
+      height: 40,
       decoration: BoxDecoration(
         color: light
             ? const Color(0xFFF1F3F5)
             : const Color(0xFF171A25),
         shape: BoxShape.circle,
       ),
-
       child: Icon(
         icon,
-        size: 16,
+        size: 19,
         color: light
             ? const Color(0xFF555555)
             : Colors.white,
@@ -254,13 +235,13 @@ class _FoodCategoryPageState
       ) {
     if (state.foods.isEmpty) {
       return const SizedBox(
-        height: 150,
+        height: 160,
         child: Center(
           child: Text(
             'No food found',
             style: TextStyle(
               color: Colors.grey,
-              fontSize: 11,
+              fontSize: 14,
             ),
           ),
         ),
@@ -269,20 +250,15 @@ class _FoodCategoryPageState
 
     return GridView.builder(
       shrinkWrap: true,
-
-      physics:
-      const NeverScrollableScrollPhysics(),
-
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: state.foods.length,
-
       gridDelegate:
       const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 0.88,
+        crossAxisSpacing: 14,
+        mainAxisSpacing: 14,
+        childAspectRatio: 0.82,
       ),
-
       itemBuilder: (context, index) {
         final food = state.foods[index];
 
@@ -305,14 +281,11 @@ class _FoodCategoryPageState
           food,
         );
       },
-
       child: Container(
-        padding: const EdgeInsets.all(7),
-
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
-
+          borderRadius: BorderRadius.circular(13),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.06),
@@ -321,56 +294,41 @@ class _FoodCategoryPageState
             ),
           ],
         ),
-
         child: Column(
           crossAxisAlignment:
           CrossAxisAlignment.start,
-
           children: [
-
             ClipRRect(
-              borderRadius:
-              BorderRadius.circular(8),
-
+              borderRadius: BorderRadius.circular(10),
               child: Image.asset(
                 food.image,
-
                 width: double.infinity,
-
-                height: 52,
-
+                height: 68,
                 fit: BoxFit.cover,
               ),
             ),
 
-            const SizedBox(height: 6),
+            const SizedBox(height: 7),
 
             Text(
               food.name,
-
               maxLines: 1,
-
-              overflow:
-              TextOverflow.ellipsis,
-
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 9,
+                fontSize: 11,
                 fontWeight: FontWeight.bold,
+                color: Color(0xFF20242F),
               ),
             ),
 
-            const SizedBox(height: 2),
+            const SizedBox(height: 3),
 
             Text(
               food.restaurant,
-
               maxLines: 1,
-
-              overflow:
-              TextOverflow.ellipsis,
-
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 8,
+                fontSize: 10,
                 color: Color(0xFF9BA5BC),
               ),
             ),
@@ -379,32 +337,28 @@ class _FoodCategoryPageState
 
             Row(
               children: [
-
                 Text(
                   '\$${food.price.toStringAsFixed(0)}',
-
                   style: const TextStyle(
-                    fontSize: 9,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
+                    color: Color(0xFF20242F),
                   ),
                 ),
 
                 const Spacer(),
 
                 Container(
-                  width: 19,
-                  height: 19,
-
-                  decoration:
-                  const BoxDecoration(
+                  width: 22,
+                  height: 22,
+                  decoration: const BoxDecoration(
                     color: Color(0xFFFF8A3D),
                     shape: BoxShape.circle,
                   ),
-
                   child: const Icon(
                     Icons.add,
                     color: Colors.white,
-                    size: 13,
+                    size: 15,
                   ),
                 ),
               ],
@@ -419,8 +373,9 @@ class _FoodCategoryPageState
     return const Text(
       'Open Restaurants',
       style: TextStyle(
-        fontSize: 13,
-        fontWeight: FontWeight.w500,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: Color(0xFF20242F),
       ),
     );
   }
@@ -429,86 +384,81 @@ class _FoodCategoryPageState
     return Column(
       crossAxisAlignment:
       CrossAxisAlignment.start,
-
       children: [
-
         ClipRRect(
-          borderRadius:
-          BorderRadius.circular(7),
-
+          borderRadius: BorderRadius.circular(9),
           child: Image.asset(
             'assets/images/rose_garden.png',
-
             width: double.infinity,
-
-            height: 86,
-
+            height: 105,
             fit: BoxFit.cover,
           ),
         ),
 
-        const SizedBox(height: 7),
+        const SizedBox(height: 9),
 
         const Text(
           'Tasty Treat Gallery',
-
           style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
 
-        const SizedBox(height: 3),
+        const SizedBox(height: 5),
 
         const Row(
           children: [
-
             Icon(
               Icons.star,
               color: Color(0xFFFF7622),
-              size: 14,
+              size: 17,
             ),
 
-            SizedBox(width: 3),
+            SizedBox(width: 4),
 
             Text(
               '4.7',
               style: TextStyle(
-                fontSize: 8,
+                fontSize: 11,
+                color: Color(0xFF737B8C),
               ),
             ),
 
-            SizedBox(width: 14),
+            SizedBox(width: 16),
 
             Icon(
               Icons.delivery_dining,
               color: Color(0xFFFF7622),
-              size: 14,
+              size: 17,
             ),
 
-            SizedBox(width: 3),
+            SizedBox(width: 4),
 
             Text(
               'Free',
               style: TextStyle(
-                fontSize: 8,
+                fontSize: 11,
+                color: Color(0xFF737B8C),
               ),
             ),
 
-            SizedBox(width: 14),
+            SizedBox(width: 16),
 
             Icon(
               Icons.access_time,
               color: Color(0xFFFF7622),
-              size: 14,
+              size: 17,
             ),
 
-            SizedBox(width: 3),
+            SizedBox(width: 4),
 
             Text(
               '20 min',
               style: TextStyle(
-                fontSize: 8,
+                fontSize: 11,
+                color: Color(0xFF737B8C),
               ),
             ),
           ],

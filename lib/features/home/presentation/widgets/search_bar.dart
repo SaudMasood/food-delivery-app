@@ -17,25 +17,32 @@ class SearchBarWidget extends StatelessWidget {
       child: AbsorbPointer(
         absorbing: onTap != null,
         child: Container(
-          height: 43,
+          height: 48,
           decoration: BoxDecoration(
             color: const Color(0xFFF5F5F5),
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(9),
           ),
           child: TextField(
             onChanged: onChanged,
+            style: const TextStyle(
+              fontSize: 13,
+              color: Color(0xFF20242F),
+            ),
             decoration: const InputDecoration(
               hintText: 'Search dishes, restaurants',
               hintStyle: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
                 color: Color(0xFF9BA5BC),
               ),
               prefixIcon: Icon(
                 Icons.search,
-                size: 17,
+                size: 20,
                 color: Color(0xFF9BA5BC),
               ),
               border: InputBorder.none,
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 14,
+              ),
             ),
           ),
         ),

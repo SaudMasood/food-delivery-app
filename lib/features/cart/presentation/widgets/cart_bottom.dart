@@ -19,22 +19,19 @@ class _CartBottomState extends State<CartBottom> {
 
   @override
   Widget build(BuildContext context) {
-    final deliveryFee = 0.0;
-    final subtotal = widget.total - deliveryFee;
-
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(
-        16,
-        17,
-        16,
+        18,
         19,
+        18,
+        22,
       ),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(15),
-          topRight: Radius.circular(15),
+          topLeft: Radius.circular(32),
+          topRight: Radius.circular(32),
         ),
       ),
       child: Column(
@@ -42,11 +39,11 @@ class _CartBottomState extends State<CartBottom> {
         children: [
           _buildAddress(),
 
-          const SizedBox(height: 20),
+          const SizedBox(height: 21),
 
           _buildTotal(),
 
-          const SizedBox(height: 18),
+          const SizedBox(height: 19),
 
           _buildPlaceOrder(),
         ],
@@ -64,7 +61,8 @@ class _CartBottomState extends State<CartBottom> {
               'DELIVERY ADDRESS',
               style: TextStyle(
                 color: Color(0xFF9BA5BC),
-                fontSize: 8,
+                fontSize: 10,
+                fontWeight: FontWeight.w600,
               ),
             ),
 
@@ -76,33 +74,34 @@ class _CartBottomState extends State<CartBottom> {
                 'EDIT',
                 style: TextStyle(
                   color: Color(0xFFFF7622),
-                  fontSize: 8,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
           ],
         ),
 
-        const SizedBox(height: 9),
+        const SizedBox(height: 10),
 
         Container(
           width: double.infinity,
-          height: 40,
+          height: 47,
           padding: const EdgeInsets.symmetric(
             horizontal: 12,
           ),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
             color: const Color(0xFFF0F4F8),
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
             address,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(
-              color: Color(0xFF9BA5BC),
-              fontSize: 9,
+              color: Color(0xFF7F8795),
+              fontSize: 11,
             ),
           ),
         ),
@@ -117,18 +116,19 @@ class _CartBottomState extends State<CartBottom> {
           'TOTAL:',
           style: TextStyle(
             color: Color(0xFF9BA5BC),
-            fontSize: 8,
+            fontSize: 10,
+            fontWeight: FontWeight.w600,
           ),
         ),
 
-        const SizedBox(width: 10),
+        const SizedBox(width: 11),
 
         Text(
           '\$${widget.total.toStringAsFixed(0)}',
           style: const TextStyle(
             color: Color(0xFF20242F),
-            fontSize: 18,
-            fontWeight: FontWeight.w400,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
           ),
         ),
 
@@ -142,13 +142,14 @@ class _CartBottomState extends State<CartBottom> {
                 'Breakdown',
                 style: TextStyle(
                   color: Color(0xFFFF7622),
-                  fontSize: 8,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Icon(
                 Icons.chevron_right,
                 color: Color(0xFF20242F),
-                size: 15,
+                size: 18,
               ),
             ],
           ),
@@ -160,18 +161,15 @@ class _CartBottomState extends State<CartBottom> {
   Widget _buildPlaceOrder() {
     return SizedBox(
       width: double.infinity,
-      height: 41,
+      height: 48,
       child: ElevatedButton(
-        onPressed: (){
+        onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) {
-                return const PaymentMethodPage();
-              },
+              builder: (_) => const PaymentMethodPage(),
             ),
           );
-
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFFF7622),
@@ -179,14 +177,14 @@ class _CartBottomState extends State<CartBottom> {
           elevation: 0,
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(7),
+            borderRadius: BorderRadius.circular(8),
           ),
         ),
         child: const Text(
           'PLACE ORDER',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 9,
+            fontSize: 11,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -208,14 +206,13 @@ class _CartBottomState extends State<CartBottom> {
             horizontal: 25,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(18),
+            padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment:
-              CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -223,7 +220,7 @@ class _CartBottomState extends State<CartBottom> {
                       'Delivery Address',
                       style: TextStyle(
                         color: Color(0xFF20242F),
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -235,94 +232,86 @@ class _CartBottomState extends State<CartBottom> {
                         Navigator.pop(dialogContext);
                       },
                       child: Container(
-                        width: 28,
-                        height: 28,
+                        width: 32,
+                        height: 32,
                         decoration: const BoxDecoration(
                           color: Color(0xFFF1F3F5),
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(
                           Icons.close,
-                          size: 14,
+                          size: 16,
                         ),
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: 20),
 
                 const Text(
                   'ADDRESS',
                   style: TextStyle(
                     color: Color(0xFF9BA5BC),
-                    fontSize: 8,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
 
-                const SizedBox(height: 7),
+                const SizedBox(height: 8),
 
                 TextField(
                   controller: controller,
                   style: const TextStyle(
-                    fontSize: 10,
+                    fontSize: 12,
                     color: Color(0xFF20242F),
                   ),
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: const Color(0xFFF0F4F8),
-                    contentPadding:
-                    const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 12,
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 13,
+                      vertical: 13,
                     ),
                     border: OutlineInputBorder(
-                      borderRadius:
-                      BorderRadius.circular(7),
+                      borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide.none,
                     ),
-                    hintText:
-                    'Enter delivery address',
+                    hintText: 'Enter delivery address',
                     hintStyle: const TextStyle(
-                      fontSize: 9,
+                      fontSize: 11,
                       color: Color(0xFF9BA5BC),
                     ),
                   ),
                 ),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: 20),
 
                 SizedBox(
                   width: double.infinity,
-                  height: 41,
+                  height: 44,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (controller.text
-                          .trim()
-                          .isNotEmpty) {
+                      if (controller.text.trim().isNotEmpty) {
                         setState(() {
-                          address =
-                              controller.text.trim();
+                          address = controller.text.trim();
                         });
                       }
 
                       Navigator.pop(dialogContext);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      const Color(0xFFFF7622),
+                      backgroundColor: const Color(0xFFFF7622),
                       elevation: 0,
-                      shape:
-                      RoundedRectangleBorder(
-                        borderRadius:
-                        BorderRadius.circular(7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                     child: const Text(
                       'SAVE ADDRESS',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 9,
+                        fontSize: 11,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -349,14 +338,12 @@ class _CartBottomState extends State<CartBottom> {
             horizontal: 25,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(18),
+            padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment:
-              CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -364,7 +351,7 @@ class _CartBottomState extends State<CartBottom> {
                       'Price Breakdown',
                       style: TextStyle(
                         color: Color(0xFF20242F),
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -376,29 +363,29 @@ class _CartBottomState extends State<CartBottom> {
                         Navigator.pop(dialogContext);
                       },
                       child: Container(
-                        width: 28,
-                        height: 28,
+                        width: 32,
+                        height: 32,
                         decoration: const BoxDecoration(
                           color: Color(0xFFF1F3F5),
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(
                           Icons.close,
-                          size: 14,
+                          size: 16,
                         ),
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 22),
 
                 _breakdownRow(
                   'Subtotal',
                   subtotal,
                 ),
 
-                const SizedBox(height: 12),
+                const SizedBox(height: 13),
 
                 _breakdownRow(
                   'Delivery Fee',
@@ -407,10 +394,9 @@ class _CartBottomState extends State<CartBottom> {
 
                 const Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: 14,
+                    vertical: 15,
                   ),
                   child: Divider(
-                    height: 1,
                     color: Color(0xFFE5E5E5),
                   ),
                 ),
@@ -421,7 +407,8 @@ class _CartBottomState extends State<CartBottom> {
                       'TOTAL',
                       style: TextStyle(
                         color: Color(0xFF9BA5BC),
-                        fontSize: 9,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
 
@@ -431,37 +418,34 @@ class _CartBottomState extends State<CartBottom> {
                       '\$${widget.total.toStringAsFixed(0)}',
                       style: const TextStyle(
                         color: Color(0xFF20242F),
-                        fontSize: 17,
+                        fontSize: 19,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: 20),
 
                 SizedBox(
                   width: double.infinity,
-                  height: 40,
+                  height: 44,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pop(dialogContext);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      const Color(0xFFFF7622),
+                      backgroundColor: const Color(0xFFFF7622),
                       elevation: 0,
-                      shape:
-                      RoundedRectangleBorder(
-                        borderRadius:
-                        BorderRadius.circular(7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                     child: const Text(
                       'DONE',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 9,
+                        fontSize: 11,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -485,7 +469,7 @@ class _CartBottomState extends State<CartBottom> {
           title,
           style: const TextStyle(
             color: Color(0xFF9BA5BC),
-            fontSize: 9,
+            fontSize: 11,
           ),
         ),
 
@@ -495,96 +479,11 @@ class _CartBottomState extends State<CartBottom> {
           '\$${amount.toStringAsFixed(0)}',
           style: const TextStyle(
             color: Color(0xFF20242F),
-            fontSize: 10,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ],
-    );
-  }
-
-  void _placeOrder() {
-    showDialog(
-      context: context,
-      builder: (dialogContext) {
-        return Dialog(
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  width: 48,
-                  height: 48,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFFFF1E9),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(
-                    Icons.check,
-                    color: Color(0xFFFF7622),
-                    size: 25,
-                  ),
-                ),
-
-                const SizedBox(height: 12),
-
-                const Text(
-                  'Order Placed',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                const SizedBox(height: 6),
-
-                const Text(
-                  'Your order has been placed successfully.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF9BA5BC),
-                    fontSize: 9,
-                  ),
-                ),
-
-                const SizedBox(height: 18),
-
-                SizedBox(
-                  width: double.infinity,
-                  height: 40,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(dialogContext);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      const Color(0xFFFF7622),
-                      elevation: 0,
-                      shape:
-                      RoundedRectangleBorder(
-                        borderRadius:
-                        BorderRadius.circular(7),
-                      ),
-                    ),
-                    child: const Text(
-                      'DONE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 9,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
     );
   }
 }

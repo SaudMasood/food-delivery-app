@@ -38,8 +38,7 @@ class FoodDetailView extends StatefulWidget {
       _FoodDetailViewState();
 }
 
-class _FoodDetailViewState
-    extends State<FoodDetailView> {
+class _FoodDetailViewState extends State<FoodDetailView> {
   bool isFavorite = false;
 
   @override
@@ -51,7 +50,9 @@ class _FoodDetailViewState
           builder: (context, state) {
             if (state is! FoodDetailLoaded) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Color(0xFFFF7622),
+                ),
               );
             }
 
@@ -97,15 +98,14 @@ class _FoodDetailViewState
 
   Widget _buildFoodImage() {
     return AspectRatio(
-      aspectRatio: 1.35,
+      aspectRatio: 1.4,
       child: Stack(
         children: [
           Positioned.fill(
             child: ClipRRect(
-              borderRadius:
-              const BorderRadius.only(
-                bottomLeft: Radius.circular(18),
-                bottomRight: Radius.circular(18),
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
               ),
               child: Image.asset(
                 widget.food.image,
@@ -132,8 +132,7 @@ class _FoodDetailViewState
               icon: isFavorite
                   ? Icons.favorite
                   : Icons.favorite_border,
-              iconColor:
-              const Color(0xFFFF7622),
+              iconColor: const Color(0xFFFF7622),
               onTap: () {
                 setState(() {
                   isFavorite = !isFavorite;
@@ -154,17 +153,16 @@ class _FoodDetailViewState
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 36,
-        height: 36,
-        decoration:
-        const BoxDecoration(
+        width: 42,
+        height: 42,
+        decoration: const BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
         ),
         child: Center(
           child: Icon(
             icon,
-            size: 14,
+            size: 17,
             color: iconColor,
           ),
         ),
@@ -179,88 +177,93 @@ class _FoodDetailViewState
     return Padding(
       padding: const EdgeInsets.fromLTRB(
         18,
-        14,
         18,
-        20,
+        18,
+        24,
       ),
       child: Column(
-        crossAxisAlignment:
-        CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             widget.food.name,
             style: const TextStyle(
-              fontSize: 14,
+              fontSize: 19,
               fontWeight: FontWeight.bold,
               color: Color(0xFF20242F),
             ),
           ),
 
-          const SizedBox(height: 5),
+          const SizedBox(height: 7),
 
           Row(
             children: [
               const Icon(
                 Icons.location_on,
                 color: Colors.red,
-                size: 11,
+                size: 16,
               ),
-              const SizedBox(width: 3),
-              Text(
-                widget.food.restaurant,
-                style: const TextStyle(
-                  fontSize: 9,
-                  color: Color(0xFF555555),
+
+              const SizedBox(width: 4),
+
+              Expanded(
+                child: Text(
+                  widget.food.restaurant,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF555555),
+                  ),
                 ),
               ),
             ],
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 13),
 
           _buildFoodStats(),
 
-          const SizedBox(height: 13),
+          const SizedBox(height: 17),
 
           const Text(
             'Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
             style: TextStyle(
-              fontSize: 8,
+              fontSize: 11,
               height: 1.6,
               color: Color(0xFF9BA5BC),
             ),
           ),
 
-          const SizedBox(height: 17),
+          const SizedBox(height: 20),
 
           const Text(
             'SIZE:',
             style: TextStyle(
-              fontSize: 7,
+              fontSize: 11,
               color: Color(0xFF9BA5BC),
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
           ),
 
-          const SizedBox(height: 8),
+          const SizedBox(height: 9),
 
           _buildSizes(
             context,
             state,
           ),
 
-          const SizedBox(height: 17),
+          const SizedBox(height: 20),
 
           const Text(
             'INGREDIENTS',
             style: TextStyle(
-              fontSize: 7,
+              fontSize: 11,
               color: Color(0xFF9BA5BC),
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
           ),
 
-          const SizedBox(height: 8),
+          const SizedBox(height: 9),
 
           _buildIngredients(),
         ],
@@ -274,49 +277,52 @@ class _FoodDetailViewState
         const Icon(
           Icons.star_border,
           color: Color(0xFFFF7622),
-          size: 16,
+          size: 20,
         ),
 
-        const SizedBox(width: 3),
+        const SizedBox(width: 4),
 
         Text(
           widget.food.rating.toString(),
           style: const TextStyle(
-            fontSize: 8,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
 
-        const SizedBox(width: 16),
+        const SizedBox(width: 18),
 
         const Icon(
           Icons.delivery_dining,
           color: Color(0xFFFF7622),
-          size: 15,
+          size: 19,
         ),
 
-        const SizedBox(width: 3),
+        const SizedBox(width: 4),
 
         const Text(
           'Free',
           style: TextStyle(
-            fontSize: 8,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
 
-        const SizedBox(width: 16),
+        const SizedBox(width: 18),
 
         const Icon(
           Icons.access_time,
           color: Color(0xFFFF7622),
-          size: 15,
+          size: 19,
         ),
 
-        const SizedBox(width: 3),
+        const SizedBox(width: 4),
 
         const Text(
           '20 min',
           style: TextStyle(
-            fontSize: 8,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ],
@@ -336,8 +342,7 @@ class _FoodDetailViewState
     return Row(
       children: sizes.map(
             (size) {
-          final selected =
-              state.size == size;
+          final selected = state.size == size;
 
           return GestureDetector(
             onTap: () {
@@ -348,11 +353,10 @@ class _FoodDetailViewState
               );
             },
             child: Container(
-              width: 34,
-              height: 34,
-              margin:
-              const EdgeInsets.only(
-                right: 8,
+              width: 42,
+              height: 42,
+              margin: const EdgeInsets.only(
+                right: 10,
               ),
               decoration: BoxDecoration(
                 color: selected
@@ -364,9 +368,8 @@ class _FoodDetailViewState
                 child: Text(
                   size,
                   style: TextStyle(
-                    fontSize: 7,
-                    fontWeight:
-                    FontWeight.w500,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
                     color: selected
                         ? Colors.white
                         : Colors.black,
@@ -395,22 +398,19 @@ class _FoodDetailViewState
         children: icons.map(
               (icon) {
             return Container(
-              width: 36,
-              height: 36,
-              margin:
-              const EdgeInsets.only(
-                right: 9,
+              width: 44,
+              height: 44,
+              margin: const EdgeInsets.only(
+                right: 10,
               ),
-              decoration:
-              const BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFFFFF1E9),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 icon,
-                color:
-                const Color(0xFFFF7622),
-                size: 15,
+                color: const Color(0xFFFF7622),
+                size: 19,
               ),
             );
           },
@@ -430,16 +430,15 @@ class _FoodDetailViewState
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(
         18,
-        10,
+        13,
         18,
-        12,
+        15,
       ),
       decoration: const BoxDecoration(
         color: Color(0xFFF1F5F9),
-        borderRadius:
-        BorderRadius.only(
-          topLeft: Radius.circular(15),
-          topRight: Radius.circular(15),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(18),
+          topRight: Radius.circular(18),
         ),
       ),
       child: Column(
@@ -449,8 +448,8 @@ class _FoodDetailViewState
               Text(
                 '\$${total.toStringAsFixed(0)}',
                 style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 19,
+                  fontWeight: FontWeight.w600,
                   color: Color(0xFF20242F),
                 ),
               ),
@@ -464,14 +463,16 @@ class _FoodDetailViewState
             ],
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 12),
 
           SizedBox(
             width: double.infinity,
-            height: 43,
+            height: 48,
             child: ElevatedButton(
               onPressed: () {
-                context.read<FoodDetailBloc>().add(
+                context
+                    .read<FoodDetailBloc>()
+                    .add(
                   AddFoodToCart(),
                 );
 
@@ -485,10 +486,12 @@ class _FoodDetailViewState
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFF7622),
+                backgroundColor:
+                const Color(0xFFFF7622),
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(7),
+                  borderRadius:
+                  BorderRadius.circular(9),
                 ),
               ),
               child: Text(
@@ -497,12 +500,13 @@ class _FoodDetailViewState
                     : 'ADD TO CART',
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 8,
+                  fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-          ),        ],
+          ),
+        ],
       ),
     );
   }
@@ -512,15 +516,13 @@ class _FoodDetailViewState
       FoodDetailLoaded state,
       ) {
     return Container(
-      height: 34,
-      padding:
-      const EdgeInsets.symmetric(
-        horizontal: 7,
+      height: 40,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 9,
       ),
       decoration: BoxDecoration(
         color: const Color(0xFF20242F),
-        borderRadius:
-        BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(22),
       ),
       child: Row(
         children: [
@@ -535,21 +537,22 @@ class _FoodDetailViewState
             child: const Icon(
               Icons.remove,
               color: Colors.white,
-              size: 13,
+              size: 16,
             ),
           ),
 
-          const SizedBox(width: 12),
+          const SizedBox(width: 14),
 
           Text(
             state.quantity.toString(),
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 9,
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
             ),
           ),
 
-          const SizedBox(width: 12),
+          const SizedBox(width: 14),
 
           GestureDetector(
             onTap: () {
@@ -562,7 +565,7 @@ class _FoodDetailViewState
             child: const Icon(
               Icons.add,
               color: Colors.white,
-              size: 13,
+              size: 16,
             ),
           ),
         ],

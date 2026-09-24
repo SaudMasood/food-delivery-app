@@ -19,19 +19,20 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 62,
+        height: 70,
         padding: const EdgeInsets.symmetric(
-          horizontal: 8,
+          horizontal: 9,
         ),
         decoration: BoxDecoration(
           color: selected
               ? const Color(0xFFFFC95C)
               : Colors.white,
-          borderRadius: BorderRadius.circular(32),
+          borderRadius: BorderRadius.circular(35),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.05),
               blurRadius: 8,
+              offset: const Offset(0, 2),
             ),
           ],
         ),
@@ -40,23 +41,24 @@ class CategoryCard extends StatelessWidget {
             ClipOval(
               child: Image.asset(
                 image,
-                width: 44,
-                height: 44,
+                width: 50,
+                height: 50,
                 fit: BoxFit.cover,
               ),
             ),
 
-            const SizedBox(width: 8),
+            const SizedBox(width: 9),
 
             Text(
               name,
               style: const TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.w500,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF20242F),
               ),
             ),
 
-            const SizedBox(width: 10),
+            const SizedBox(width: 11),
           ],
         ),
       ),

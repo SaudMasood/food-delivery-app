@@ -11,11 +11,12 @@ class OfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         Container(
-          width: 220,
-          height: 265,
-          padding: const EdgeInsets.all(16),
+          width: 235,
+          height: 280,
+          padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
               colors: [
@@ -34,7 +35,7 @@ class OfferCard extends StatelessWidget {
                 'Hurry Offers!',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 25,
+                  fontSize: 27,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -45,7 +46,7 @@ class OfferCard extends StatelessWidget {
                 '#1243CD2',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -57,31 +58,33 @@ class OfferCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 10,
+                  fontSize: 12,
+                  height: 1.3,
                   fontWeight: FontWeight.bold,
                 ),
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 22),
 
               SizedBox(
                 width: double.infinity,
-                height: 42,
+                height: 46,
                 child: OutlinedButton(
                   onPressed: onClose,
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.white,
                     side: const BorderSide(
                       color: Colors.white,
+                      width: 1.2,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   child: const Text(
                     'GOT IT',
                     style: TextStyle(
-                      fontSize: 10,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -97,15 +100,15 @@ class OfferCard extends StatelessWidget {
           child: GestureDetector(
             onTap: onClose,
             child: Container(
-              width: 30,
-              height: 30,
+              width: 34,
+              height: 34,
               decoration: const BoxDecoration(
                 color: Color(0xFFFFD15C),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.close,
-                size: 16,
+                size: 18,
                 color: Colors.white,
               ),
             ),

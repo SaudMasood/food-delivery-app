@@ -67,7 +67,6 @@ class _RestaurantDetailPageState
       restaurant: 'Kabab Restaurant',
       rating: 4.8,
     ),
-
     const FoodModel(
       id: 5,
       name: 'Pizza',
@@ -95,7 +94,6 @@ class _RestaurantDetailPageState
       restaurant: 'Spicy Restaurant',
       rating: 4.8,
     ),
-
     const FoodModel(
       id: 8,
       name: 'Chicken Sandwich',
@@ -114,7 +112,6 @@ class _RestaurantDetailPageState
       restaurant: 'Cafenio',
       rating: 4.6,
     ),
-
     const FoodModel(
       id: 10,
       name: 'Salmon Sushi',
@@ -190,48 +187,48 @@ class _RestaurantDetailPageState
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(
-            10,
-            8,
-            10,
+            18,
+            12,
+            18,
             25,
           ),
           child: Column(
-            crossAxisAlignment:
-            CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildHeader(),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 14),
 
               _buildRestaurantImage(),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 13),
 
               _buildRestaurantName(),
 
-              const SizedBox(height: 5),
+              const SizedBox(height: 6),
 
               _buildDescription(),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 12),
 
               _buildInfo(),
 
-              const SizedBox(height: 13),
+              const SizedBox(height: 17),
 
               _buildCategories(),
 
-              const SizedBox(height: 14),
+              const SizedBox(height: 18),
 
               Text(
                 '$selectedCategory (${products.length})',
                 style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF20242F),
                 ),
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 12),
 
               _buildFoods(products),
             ],
@@ -249,26 +246,28 @@ class _RestaurantDetailPageState
             Navigator.pop(context);
           },
           child: Container(
-            width: 34,
-            height: 34,
+            width: 40,
+            height: 40,
             decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
             ),
             child: const Icon(
               Icons.arrow_back_ios_new,
-              size: 14,
+              size: 16,
+              color: Color(0xFF20242F),
             ),
           ),
         ),
 
-        const SizedBox(width: 12),
+        const SizedBox(width: 14),
 
         const Text(
           'Restaurant View',
           style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
 
@@ -277,15 +276,16 @@ class _RestaurantDetailPageState
         GestureDetector(
           onTap: _showFilter,
           child: Container(
-            width: 34,
-            height: 34,
+            width: 40,
+            height: 40,
             decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
             ),
             child: const Icon(
               Icons.more_horiz,
-              size: 17,
+              size: 20,
+              color: Color(0xFF20242F),
             ),
           ),
         ),
@@ -295,7 +295,7 @@ class _RestaurantDetailPageState
 
   Widget _buildRestaurantImage() {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(14),
       child: Image.asset(
         'assets/images/rose_garden.png',
         width: double.infinity,
@@ -308,9 +308,12 @@ class _RestaurantDetailPageState
   Widget _buildRestaurantName() {
     return Text(
       widget.restaurantName,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       style: const TextStyle(
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
+        color: Color(0xFF20242F),
       ),
     );
   }
@@ -319,7 +322,7 @@ class _RestaurantDetailPageState
     return const Text(
       'Moccasas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
       style: TextStyle(
-        fontSize: 8,
+        fontSize: 10,
         color: Color(0xFF9BA5BC),
         height: 1.5,
       ),
@@ -332,49 +335,52 @@ class _RestaurantDetailPageState
         const Icon(
           Icons.star,
           color: Color(0xFFFF7622),
-          size: 14,
+          size: 18,
         ),
 
-        const SizedBox(width: 3),
+        const SizedBox(width: 4),
 
         Text(
           widget.rating,
           style: const TextStyle(
-            fontSize: 9,
+            fontSize: 11,
+            color: Color(0xFF20242F),
           ),
         ),
 
-        const SizedBox(width: 15),
+        const SizedBox(width: 18),
 
         const Icon(
           Icons.delivery_dining,
           color: Color(0xFFFF7622),
-          size: 14,
+          size: 18,
         ),
 
-        const SizedBox(width: 3),
+        const SizedBox(width: 4),
 
         const Text(
           'Free',
           style: TextStyle(
-            fontSize: 9,
+            fontSize: 11,
+            color: Color(0xFF20242F),
           ),
         ),
 
-        const SizedBox(width: 15),
+        const SizedBox(width: 18),
 
         const Icon(
           Icons.access_time,
           color: Color(0xFFFF7622),
-          size: 14,
+          size: 18,
         ),
 
-        const SizedBox(width: 3),
+        const SizedBox(width: 4),
 
         const Text(
           '20 min',
           style: TextStyle(
-            fontSize: 9,
+            fontSize: 11,
+            color: Color(0xFF20242F),
           ),
         ),
       ],
@@ -390,55 +396,56 @@ class _RestaurantDetailPageState
     ];
 
     return SizedBox(
-      height: 32,
-      child: ListView(
+      height: 42,
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        children: categories.map(
-              (category) {
-            final selected =
-                selectedCategory == category;
+        itemCount: categories.length,
+        separatorBuilder: (_, __) =>
+        const SizedBox(width: 8),
+        itemBuilder: (context, index) {
+          final category = categories[index];
+          final selected =
+              selectedCategory == category;
 
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedCategory = category;
-                  filterApplied = false;
-                });
-              },
-              child: Container(
-                margin: const EdgeInsets.only(
-                  right: 8,
-                ),
-                padding:
-                const EdgeInsets.symmetric(
-                  horizontal: 13,
-                  vertical: 8,
-                ),
-                decoration: BoxDecoration(
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedCategory = category;
+                filterApplied = false;
+              });
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: selected
+                    ? const Color(0xFFFF7622)
+                    : Colors.white,
+                borderRadius:
+                BorderRadius.circular(22),
+                border: Border.all(
                   color: selected
                       ? const Color(0xFFFF7622)
-                      : Colors.white,
-                  borderRadius:
-                  BorderRadius.circular(18),
-                  border: Border.all(
-                    color: selected
-                        ? const Color(0xFFFF7622)
-                        : const Color(0xFFE5E5E5),
-                  ),
-                ),
-                child: Text(
-                  category,
-                  style: TextStyle(
-                    fontSize: 8,
-                    color: selected
-                        ? Colors.white
-                        : Colors.black,
-                  ),
+                      : const Color(0xFFE5E5E5),
                 ),
               ),
-            );
-          },
-        ).toList(),
+              child: Text(
+                category,
+                style: TextStyle(
+                  fontSize: 11,
+                  color: selected
+                      ? Colors.white
+                      : const Color(0xFF20242F),
+                  fontWeight: selected
+                      ? FontWeight.w600
+                      : FontWeight.w500,
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -451,7 +458,7 @@ class _RestaurantDetailPageState
           child: Text(
             'No food found',
             style: TextStyle(
-              fontSize: 11,
+              fontSize: 12,
               color: Colors.grey,
             ),
           ),
@@ -467,9 +474,9 @@ class _RestaurantDetailPageState
       gridDelegate:
       const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 0.85,
+        crossAxisSpacing: 14,
+        mainAxisSpacing: 14,
+        childAspectRatio: 0.82,
       ),
       itemBuilder: (context, index) {
         final food = products[index];
@@ -479,16 +486,17 @@ class _RestaurantDetailPageState
             _openFoodDetails(food);
           },
           child: Container(
-            padding: const EdgeInsets.all(7),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius:
-              BorderRadius.circular(10),
+              BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
                   color:
-                  Colors.black.withOpacity(0.04),
-                  blurRadius: 8,
+                  Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -498,16 +506,16 @@ class _RestaurantDetailPageState
               children: [
                 ClipRRect(
                   borderRadius:
-                  BorderRadius.circular(8),
+                  BorderRadius.circular(9),
                   child: Image.asset(
                     food.image,
                     width: double.infinity,
-                    height: 58,
+                    height: 68,
                     fit: BoxFit.cover,
                   ),
                 ),
 
-                const SizedBox(height: 5),
+                const SizedBox(height: 7),
 
                 Text(
                   food.name,
@@ -515,12 +523,13 @@ class _RestaurantDetailPageState
                   overflow:
                   TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 9,
+                    fontSize: 11,
                     fontWeight: FontWeight.bold,
+                    color: Color(0xFF20242F),
                   ),
                 ),
 
-                const SizedBox(height: 2),
+                const SizedBox(height: 3),
 
                 Text(
                   food.restaurant,
@@ -528,7 +537,7 @@ class _RestaurantDetailPageState
                   overflow:
                   TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 7,
+                    fontSize: 10,
                     color: Color(0xFF9BA5BC),
                   ),
                 ),
@@ -540,16 +549,17 @@ class _RestaurantDetailPageState
                     Text(
                       '\$${food.price.toStringAsFixed(0)}',
                       style: const TextStyle(
-                        fontSize: 9,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
+                        color: Color(0xFF20242F),
                       ),
                     ),
 
                     const Spacer(),
 
                     Container(
-                      width: 19,
-                      height: 19,
+                      width: 23,
+                      height: 23,
                       decoration:
                       const BoxDecoration(
                         color: Color(0xFFFF8A3D),
@@ -558,7 +568,7 @@ class _RestaurantDetailPageState
                       child: const Icon(
                         Icons.add,
                         color: Colors.white,
-                        size: 13,
+                        size: 15,
                       ),
                     ),
                   ],
@@ -600,18 +610,19 @@ class _RestaurantDetailPageState
               setDialogState,
               ) {
             return Dialog(
-              backgroundColor: Colors.transparent,
+              backgroundColor:
+              Colors.transparent,
               insetPadding:
               const EdgeInsets.symmetric(
                 horizontal: 25,
               ),
               child: Container(
                 padding:
-                const EdgeInsets.all(16),
+                const EdgeInsets.all(18),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius:
-                  BorderRadius.circular(12),
+                  BorderRadius.circular(16),
                 ),
                 child: Column(
                   mainAxisSize:
@@ -624,9 +635,11 @@ class _RestaurantDetailPageState
                         const Text(
                           'Filter your search',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 15,
                             fontWeight:
-                            FontWeight.w500,
+                            FontWeight.w600,
+                            color:
+                            Color(0xFF20242F),
                           ),
                         ),
 
@@ -639,28 +652,29 @@ class _RestaurantDetailPageState
                             );
                           },
                           child: Container(
-                            width: 30,
-                            height: 30,
+                            width: 32,
+                            height: 32,
                             decoration:
                             const BoxDecoration(
                               color:
                               Color(0xFFF1F3F5),
-                              shape: BoxShape.circle,
+                              shape:
+                              BoxShape.circle,
                             ),
                             child: const Icon(
                               Icons.close,
-                              size: 15,
+                              size: 16,
                             ),
                           ),
                         ),
                       ],
                     ),
 
-                    const SizedBox(height: 18),
+                    const SizedBox(height: 20),
 
                     _filterTitle('OFFERS'),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 9),
 
                     _filterOptions(
                       [
@@ -676,13 +690,13 @@ class _RestaurantDetailPageState
                       },
                     ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 18),
 
                     _filterTitle(
                       'DELIVERY TIME',
                     ),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 9),
 
                     _filterOptions(
                       [
@@ -698,11 +712,11 @@ class _RestaurantDetailPageState
                       },
                     ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 18),
 
                     _filterTitle('PRICING'),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 9),
 
                     _filterOptions(
                       [
@@ -718,11 +732,11 @@ class _RestaurantDetailPageState
                       },
                     ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 18),
 
                     _filterTitle('RATINGS'),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 9),
 
                     Row(
                       children: List.generate(
@@ -739,12 +753,12 @@ class _RestaurantDetailPageState
                               });
                             },
                             child: Container(
-                              width: 32,
-                              height: 32,
+                              width: 36,
+                              height: 36,
                               margin:
                               const EdgeInsets
                                   .only(
-                                right: 7,
+                                right: 8,
                               ),
                               decoration:
                               BoxDecoration(
@@ -765,7 +779,7 @@ class _RestaurantDetailPageState
                                 const Color(
                                   0xFFFF7622,
                                 ),
-                                size: 14,
+                                size: 16,
                               ),
                             ),
                           );
@@ -773,11 +787,11 @@ class _RestaurantDetailPageState
                       ),
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 22),
 
                     SizedBox(
                       width: double.infinity,
-                      height: 42,
+                      height: 45,
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
@@ -811,7 +825,7 @@ class _RestaurantDetailPageState
                           RoundedRectangleBorder(
                             borderRadius:
                             BorderRadius.circular(
-                              7,
+                              8,
                             ),
                           ),
                         ),
@@ -819,7 +833,7 @@ class _RestaurantDetailPageState
                           'FILTER',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 10,
+                            fontSize: 11,
                             fontWeight:
                             FontWeight.bold,
                           ),
@@ -840,8 +854,9 @@ class _RestaurantDetailPageState
     return Text(
       text,
       style: const TextStyle(
-        fontSize: 8,
+        fontSize: 10,
         color: Color(0xFF9BA5BC),
+        fontWeight: FontWeight.w600,
       ),
     );
   }
@@ -852,8 +867,8 @@ class _RestaurantDetailPageState
       Function(String) onTap,
       ) {
     return Wrap(
-      spacing: 7,
-      runSpacing: 7,
+      spacing: 8,
+      runSpacing: 8,
       children: options.map(
             (option) {
           final isSelected =
@@ -866,15 +881,15 @@ class _RestaurantDetailPageState
             child: Container(
               padding:
               const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 7,
+                horizontal: 12,
+                vertical: 8,
               ),
               decoration: BoxDecoration(
                 color: isSelected
                     ? const Color(0xFFFF7622)
                     : Colors.white,
                 borderRadius:
-                BorderRadius.circular(16),
+                BorderRadius.circular(18),
                 border: Border.all(
                   color: isSelected
                       ? const Color(0xFFFF7622)
@@ -884,10 +899,13 @@ class _RestaurantDetailPageState
               child: Text(
                 option,
                 style: TextStyle(
-                  fontSize: 8,
+                  fontSize: 10,
                   color: isSelected
                       ? Colors.white
-                      : Colors.black,
+                      : const Color(0xFF20242F),
+                  fontWeight: isSelected
+                      ? FontWeight.w500
+                      : FontWeight.w400,
                 ),
               ),
             ),

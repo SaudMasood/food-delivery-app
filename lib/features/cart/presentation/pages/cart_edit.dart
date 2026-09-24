@@ -6,7 +6,6 @@ import '../bloc/cart_event.dart';
 import '../bloc/cart_state.dart';
 import '../widgets/cart_bottom.dart';
 import '../widgets/cart_item_card.dart';
-import 'cart_page.dart';
 
 class EditCartPage extends StatelessWidget {
   final CartBloc? cartBloc;
@@ -44,110 +43,88 @@ class EditCartView extends StatelessWidget {
           builder: (context, state) {
             if (state is! CartLoaded) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Color(0xFFFF7622),
+                ),
               );
             }
 
-            return Padding(
-              padding: const EdgeInsets.fromLTRB(
-                24,
-                10,
-                24,
-                18,
+            return Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
               ),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: Stack(
-                  children: [
-                    Column(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            width: double.infinity,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF111122),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15),
-                              ),
-                            ),
-                            padding: const EdgeInsets.fromLTRB(
-                              17,
-                              18,
-                              17,
-                              150,
-                            ),
-                            child: Column(
-                              children: [
-                                _buildHeader(context),
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      width: double.infinity,
+                      color: const Color(0xFF111122),
+                      padding: const EdgeInsets.fromLTRB(
+                        18,
+                        28,
+                        18,
+                        20,
+                      ),
+                      child: Column(
+                        children: [
+                          _buildHeader(context),
 
-                                const SizedBox(height: 18),
+                          const SizedBox(height: 20),
 
-                                Expanded(
-                                  child: state.items.isEmpty
-                                      ? _buildEmptyCart()
-                                      : ListView.separated(
-                                    padding: EdgeInsets.zero,
-                                    itemCount: state.items.length,
-                                    separatorBuilder:
-                                        (context, index) {
-                                      return const SizedBox(
-                                        height: 20,
-                                      );
-                                    },
-                                    itemBuilder:
-                                        (context, index) {
-                                      final item =
-                                      state.items[index];
+                          Expanded(
+                            child: state.items.isEmpty
+                                ? _buildEmptyCart()
+                                : ListView.separated(
+                              padding: EdgeInsets.zero,
+                              itemCount: state.items.length,
+                              separatorBuilder: (_, __) {
+                                return const SizedBox(
+                                  height: 20,
+                                );
+                              },
+                              itemBuilder: (context, index) {
+                                final item =
+                                state.items[index];
 
-                                      return CartItemCard(
-                                        item: item,
-                                        showDelete: false,
-                                        onIncrease: () {
-                                          context
-                                              .read<CartBloc>()
-                                              .add(
-                                            IncreaseCartItem(
-                                              item.id,
-                                            ),
-                                          );
-                                        },
-                                        onDecrease: () {
-                                          context
-                                              .read<CartBloc>()
-                                              .add(
-                                            DecreaseCartItem(
-                                              item.id,
-                                            ),
-                                          );
-                                        },
-                                        onRemove: () {},
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ],
+                                return CartItemCard(
+                                  item: item,
+                                  showDelete: false,
+                                  onIncrease: () {
+                                    context
+                                        .read<CartBloc>()
+                                        .add(
+                                      IncreaseCartItem(
+                                        item.id,
+                                      ),
+                                    );
+                                  },
+                                  onDecrease: () {
+                                    context
+                                        .read<CartBloc>()
+                                        .add(
+                                      DecreaseCartItem(
+                                        item.id,
+                                      ),
+                                    );
+                                  },
+                                  onRemove: () {},
+                                );
+                              },
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-
-                    Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: CartBottom(
-                        total: state.total,
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+
+                  CartBottom(
+                    total: state.total,
+                  ),
+                ],
               ),
             );
           },
@@ -159,32 +136,16 @@ class EditCartView extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     return Row(
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            width: 30,
-            height: 30,
-            decoration: const BoxDecoration(
-              color: Color(0xFF29293B),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.white,
-              size: 12,
-            ),
-          ),
-        ),
+        _buildBackButton(context),
 
-        const SizedBox(width: 12),
+        const SizedBox(width: 14),
 
         const Text(
           'Cart',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 10,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
         ),
 
@@ -195,15 +156,36 @@ class EditCartView extends StatelessWidget {
             Navigator.pop(context);
           },
           child: const Text(
-            'EDIT ITEMS',
+            'DONE',
             style: TextStyle(
-              color: Color(0xFFFF7622),
-              fontSize: 8,
+              color: Color(0xFF00B67A),
+              fontSize: 12,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildBackButton(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+        width: 38,
+        height: 38,
+        decoration: const BoxDecoration(
+          color: Color(0xFF29293B),
+          shape: BoxShape.circle,
+        ),
+        child: const Icon(
+          Icons.arrow_back_ios_new,
+          color: Colors.white,
+          size: 16,
+        ),
+      ),
     );
   }
 
@@ -213,7 +195,7 @@ class EditCartView extends StatelessWidget {
         'Your cart is empty',
         style: TextStyle(
           color: Color(0xFF8E8EA3),
-          fontSize: 11,
+          fontSize: 14,
         ),
       ),
     );
