@@ -1,202 +1,225 @@
-# 🍔 Food Delivery App — Week 8 Internship Project
+````markdown
+# 🍔 Food Delivery App
 
 <p align="center">
-  <img src="assets/images/food_logo.svg" width="120" alt="Food Delivery App Logo">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=Food%20Delivery%20App&fontSize=45&fontAlignY=35&animation=fadeIn&fontColor=ffffff" width="100%"/>
 </p>
 
 <p align="center">
-  <b>Modern Food Delivery Mobile Application built with Flutter</b>
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&duration=3000&pause=1000&color=FF7622&center=true&vCenter=true&width=700&lines=Flutter+Food+Delivery+Application;Week+8+Internship+Project;Built+with+Flutter+%26+Dart;Clean+Architecture+%7C+BLoC;Figma+to+Flutter+Development" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter">
-  <img src="https://img.shields.io/badge/Dart-3.x-blue?logo=dart">
-  <img src="https://img.shields.io/badge/BLoC-State%20Management-purple">
-  <img src="https://img.shields.io/badge/Clean%20Architecture-orange">
-  <img src="https://img.shields.io/badge/Week%208-Internship-red">
-  <img src="https://img.shields.io/badge/Owasoft-Technologies-green">
+  <img src="assets/images/food_logo.svg" width="110" alt="Food Delivery App Logo">
+</p>
+
+<p align="center">
+  <b>🍔 Modern Food Delivery Mobile Application</b>
+  <br>
+  <b>📱 Flutter Internship — Week 8</b>
+  <br>
+  <b>🏢 Owasoft Technologies Pvt. Ltd.</b>
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+
+<img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white">
+
+<img src="https://img.shields.io/badge/BLoC-State%20Management-7B1FA2?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Clean-Architecture-FF7622?style=for-the-badge">
+
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Internship-Week%208-E53935?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Owasoft-Technologies-43A047?style=for-the-badge">
+
+<img src="https://img.shields.io/github/last-commit/SaudMasood/food-delivery-app?style=for-the-badge">
+
 </p>
 
 ---
 
-## 🚀 About The Project
+## 🌊 Project Overview
 
-**Food Delivery App** is my **Week 8 Flutter Internship Project** at **Owasoft Technologies Pvt. Ltd.**
+<p align="center">
 
-The project was developed from a provided **Figma Food Delivery App design** and converted into a functional Flutter mobile application.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=FF7622&height=80&section=header" width="100%"/>
 
-The main focus of Week 8 was:
+</p>
 
-* 🎨 Figma to Flutter UI implementation
-* 📱 Responsive mobile UI
-* 🧩 Reusable Flutter widgets
-* 🏗️ Clean Architecture
-* 🔄 BLoC state management
-* 🧭 Screen navigation
-* 🛒 Food ordering flow
-* 💳 Payment flow
-* 📍 Order tracking
-* 👤 Profile and address management
-* ✨ UI animations and interactive elements
+**Food Delivery App** is a modern Flutter mobile application developed as my **Week 8 Internship Project at Owasoft Technologies Pvt. Ltd.**
 
----
+The application was created from a provided **Figma Food Delivery App design** and converted into a functional Flutter application with reusable widgets, BLoC state management, Clean Architecture, navigation, interactive UI and animations.
 
-# ✨ Key Features
-
-### 🏠 Home
-
-* Food categories
-* Popular foods
-* Search
-* Restaurants
-* Promotional offers
-* Food cards
-* Navigation to food details
-
-### 🔎 Search
-
-* Search foods
-* Search restaurants
-* Recent searches
-* Suggested restaurants
-* Search results
-
-### 🍔 Food Details
-
-* Food image
-* Restaurant information
-* Rating
-* Description
-* Food size selection
-* Ingredients
-* Quantity selector
-* Price
-* Add to cart
-
-### 🛒 Cart
-
-* Cart items
-* Quantity management
-* Price calculation
-* Edit cart
-* Remove items
-* Checkout
-
-### 💳 Payment
-
-Supported payment options:
-
-* Cash
-* Visa
-* Mastercard
-* PayPal
-
-Also includes:
-
-* Add new card
-* Saved card
-* Payment confirmation
-* Payment success screen
-
-### 📍 Order Tracking
-
-* Order information
-* Estimated delivery time
-* Delivery progress
-* Delivery person details
-* Call delivery person
-* Message delivery person
-* Tracking interface
-
-### 📦 My Orders
-
-* Ongoing orders
-* Completed orders
-* Canceled orders
-* Track order
-* Cancel order
-* Rate order
-* Re-order
-
-### 👤 Profile
-
-* Personal information
-* Edit profile
-* Address management
-* Add address
-* Edit address
-* Delete address
+```text
+🎨 Figma Design
+       ↓
+📱 Flutter UI
+       ↓
+🧩 Reusable Widgets
+       ↓
+🔄 BLoC State Management
+       ↓
+🏗️ Clean Architecture
+       ↓
+✨ Animations & Interactions
+       ↓
+🍔 Complete Food Ordering Experience
+````
 
 ---
 
-# ✨ Animations & Interactive UI
+# ✨ Features
 
-The application also includes **UI animations and interactive elements** to make the experience smoother and more engaging.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=20&duration=2500&pause=700&color=FF7622&center=true&vCenter=true&width=600&lines=Explore+Food;Search+Restaurants;Add+to+Cart;Make+Payment;Track+Orders;Manage+Profile" />
+</p>
 
-Animation/interaction areas include:
+| Feature            | Description                               |
+| ------------------ | ----------------------------------------- |
+| 🏠 Home            | Food categories, popular foods and offers |
+| 🔎 Search          | Search foods and restaurants              |
+| 🍔 Categories      | Browse foods by category                  |
+| 🍕 Food Details    | Food information, size and ingredients    |
+| 🛒 Cart            | Add, remove and update food items         |
+| 💳 Payment         | Multiple payment methods                  |
+| 🎉 Payment Success | Payment confirmation                      |
+| 📍 Tracking        | Order tracking interface                  |
+| 📦 My Orders       | Ongoing, completed and canceled orders    |
+| 👤 Profile         | Personal information and settings         |
+| 📍 Addresses       | Add, edit and manage addresses            |
+| ✨ Animations       | Interactive and animated UI elements      |
 
-* 🚀 Splash screen transitions
-* 🔄 Screen navigation transitions
+---
+
+# 🎬 UI & Animation
+
+<p align="center">
+
+<img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="500">
+
+</p>
+
+The application focuses on creating a smooth and interactive user experience.
+
+### ✨ Implemented UI Interactions
+
+```text
+🚀 Splash Screen
+      ↓
+✨ Smooth Screen Transitions
+      ↓
+🎯 Category Selection
+      ↓
+🛒 Cart Interactions
+      ↓
+💳 Payment Selection
+      ↓
+📦 Order Status
+      ↓
+🧭 Navigation Interaction
+```
+
+### Animation Areas
+
+* 🌊 Splash screen visual transitions
 * 🎯 Category selection feedback
-* 🛒 Cart quantity interactions
-* ❤️ Food interaction buttons
-* 💳 Payment selection feedback
-* 📦 Order status interactions
+* 🛒 Cart interactions
+* 🔄 Navigation transitions
+* 💳 Payment selection
+* 📦 Order interaction
 * 🧭 Bottom navigation selection
-* 🎨 Button and card interactions
-* 🪄 Dialog and overlay interactions
+* 🪄 Dialog interactions
+* ✨ Button interactions
+* 🎨 Animated UI elements
 
-The animation work focuses on keeping the UI smooth while maintaining the Figma-inspired design.
+---
+
+# 🌊 Animated Design
+
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,16,18,20&height=120&section=header&animation=fadeIn" width="100%"/>
+
+</p>
+
+### 🎨 Design Philosophy
+
+The UI follows a clean food-delivery style with:
+
+```text
+┌──────────────────────────────┐
+│       🍔 FOOD DELIVERY       │
+│                              │
+│   🔎 Search food...          │
+│                              │
+│   🍔   🍕   🌭   🍣         │
+│                              │
+│   Popular Foods              │
+│                              │
+│  ┌────────┐  ┌────────┐      │
+│  │ 🍔     │  │ 🍕     │      │
+│  │ Burger │  │ Pizza  │      │
+│  └────────┘  └────────┘      │
+│                              │
+├──────────────────────────────┤
+│ 🏠      📋      🛒      👤  │
+└──────────────────────────────┘
+```
 
 ---
 
 # 🧭 Application Flow
 
 ```text
-                    ┌──────────────┐
-                    │    Splash    │
-                    └──────┬───────┘
+                    ┌─────────────┐
+                    │   Splash    │
+                    └──────┬──────┘
                            ↓
-                    ┌──────────────┐
-                    │     Login    │
-                    └──────┬───────┘
+                    ┌─────────────┐
+                    │    Login    │
+                    └──────┬──────┘
                            ↓
-                    ┌──────────────┐
-                    │     Home     │
-                    └──────┬───────┘
+                    ┌─────────────┐
+                    │    Home     │
+                    └──────┬──────┘
                            │
-             ┌─────────────┼─────────────┐
-             ↓             ↓             ↓
-          Search       Categories    Restaurant
-             │             │             │
-             └─────────────┼─────────────┘
+              ┌────────────┼────────────┐
+              ↓            ↓            ↓
+           Search      Category     Restaurant
+              │            │            │
+              └────────────┼────────────┘
                            ↓
-                    ┌──────────────┐
-                    │ Food Details │
-                    └──────┬───────┘
+                    ┌─────────────┐
+                    │ Food Details│
+                    └──────┬──────┘
                            ↓
-                    ┌──────────────┐
-                    │     Cart     │
-                    └──────┬───────┘
+                    ┌─────────────┐
+                    │    Cart     │
+                    └──────┬──────┘
                            ↓
-                    ┌──────────────┐
-                    │   Payment    │
-                    └──────┬───────┘
+                    ┌─────────────┐
+                    │   Payment   │
+                    └──────┬──────┘
                            ↓
-                 ┌───────────────────┐
-                 │ Payment Successful│
-                 └─────────┬─────────┘
+                    ┌─────────────┐
+                    │   Success   │
+                    └──────┬──────┘
                            ↓
-                    ┌──────────────┐
-                    │   Tracking   │
-                    └──────────────┘
+                    ┌─────────────┐
+                    │  Tracking   │
+                    └─────────────┘
 ```
 
 ---
 
-# 🧱 Architecture
-
-The application follows **Clean Architecture**.
+# 🏗️ Clean Architecture
 
 ```text
 lib/
@@ -209,6 +232,7 @@ lib/
 │   └── widgets/
 │
 └── features/
+    │
     ├── home/
     ├── food_details/
     ├── restaurant/
@@ -219,40 +243,52 @@ lib/
     └── profile/
 ```
 
-### Architecture Flow
+### 🔄 Data Flow
 
 ```text
-UI
- ↓
-BLoC
- ↓
-Use Case
- ↓
-Repository
- ↓
-Data Source
- ↓
-Local Data / API
+       ┌─────────────┐
+       │     UI      │
+       └──────┬──────┘
+              ↓
+       ┌─────────────┐
+       │    BLoC     │
+       └──────┬──────┘
+              ↓
+       ┌─────────────┐
+       │   UseCase   │
+       └──────┬──────┘
+              ↓
+       ┌─────────────┐
+       │ Repository  │
+       └──────┬──────┘
+              ↓
+       ┌─────────────┐
+       │ Data Source │
+       └──────┬──────┘
+              ↓
+       ┌─────────────┐
+       │ Data / API  │
+       └─────────────┘
 ```
 
 ---
 
 # 🔄 BLoC State Management
 
-BLoC is used to separate UI from application logic.
+The project uses **BLoC** to separate UI from business logic.
 
 ```text
-User Action
-     ↓
-   Event
-     ↓
-    BLoC
-     ↓
- Business Logic
-     ↓
-   State
-     ↓
-    UI
+👆 User Action
+      ↓
+📨 Event
+      ↓
+🧠 BLoC
+      ↓
+⚙️ Business Logic
+      ↓
+📤 State
+      ↓
+🎨 UI Update
 ```
 
 Example:
@@ -265,33 +301,140 @@ context.read<HomeBloc>().add(
 
 ---
 
-# 🎨 Figma to Flutter
+# 🎨 Figma → Flutter
 
-This project was developed using a provided **Figma Food Delivery App design**.
-
-Development process:
+This project was developed from a Figma Food Delivery App design.
 
 ```text
-Figma Design
-     ↓
-Analyze UI
-     ↓
-Identify Screens
-     ↓
-Export Assets
-     ↓
-Create Flutter Widgets
-     ↓
-Implement UI
-     ↓
-Add Navigation
-     ↓
-Implement BLoC
-     ↓
-Add Interactions & Animations
-     ↓
-Test Application
+🎨 Figma
+   ↓
+🔍 Analyze Design
+   ↓
+📐 Measure UI
+   ↓
+🖼️ Export Assets
+   ↓
+🧩 Create Widgets
+   ↓
+📱 Build Screens
+   ↓
+🧭 Navigation
+   ↓
+🔄 BLoC
+   ↓
+✨ Animation
+   ↓
+🧪 Testing
 ```
+
+---
+
+# 📱 Main Screens
+
+```text
+🚀 Splash
+🔐 Login
+📝 Sign Up
+🔑 Forgot Password
+🔢 Verification
+
+🏠 Home
+🔎 Search
+🍔 Food Category
+🏪 Restaurant Details
+🍕 Food Details
+
+🛒 Cart
+✏️ Edit Cart
+
+💳 Payment Method
+💳 Add Card
+🎉 Payment Success
+
+📍 Order Tracking
+📞 Delivery Man Call
+💬 Delivery Man Message
+
+📦 My Orders
+
+👤 Profile
+📋 Personal Information
+✏️ Edit Profile
+📍 My Address
+➕ Add Address
+```
+
+---
+
+# 🎓 Week 8 — Owasoft Internship
+
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=header&text=WEEK%208&fontSize=40&fontColor=ffffff&animation=fadeIn" width="100%"/>
+
+</p>
+
+### 🏢 Internship
+
+**Owasoft Technologies Pvt. Ltd.**
+
+### 👨‍💻 Role
+
+**Flutter Developer Intern**
+
+### 📱 Project
+
+**Food Delivery App**
+
+### 📅 Week
+
+**Week 8**
+
+---
+
+## 📝 Week 8 Responsibilities
+
+During Week 8, I worked on:
+
+* 🎨 Analyzing the provided Figma design
+* 📱 Converting Figma screens into Flutter
+* 🧩 Creating reusable widgets
+* 🏗️ Applying Clean Architecture
+* 🔄 Implementing BLoC
+* 🧭 Implementing navigation
+* 🍔 Developing food screens
+* 🛒 Developing cart functionality
+* 💳 Developing payment screens
+* 📦 Developing order management
+* 📍 Developing order tracking
+* 👤 Developing profile screens
+* 📍 Implementing address management
+* ✨ Adding UI animations and interactions
+* 🐛 Fixing Flutter and Gradle issues
+* 🧪 Testing the application
+
+---
+
+# 🧰 Technologies
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=flutter,dart,git,github,androidstudio,vscode,figma" />
+
+</p>
+
+| Technology         | Purpose              |
+| ------------------ | -------------------- |
+| Flutter            | Mobile Application   |
+| Dart               | Programming Language |
+| BLoC               | State Management     |
+| Clean Architecture | Architecture         |
+| Figma              | UI/UX Design         |
+| SVG                | Vector Assets        |
+| Git                | Version Control      |
+| GitHub             | Repository           |
+| Android Studio     | Android Development  |
+| VS Code            | Development          |
 
 ---
 
@@ -306,188 +449,43 @@ lib/
 │   ├── theme/
 │   ├── utils/
 │   └── widgets/
-│       └── main_screen.dart
 │
 ├── features/
-│   │
 │   ├── home/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
 │   ├── food_details/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
 │   ├── restaurant/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
 │   ├── cart/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
 │   ├── payment/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
 │   ├── tracking/
-│   │   ├── data/
-│   │   └── presentation/
-│   │
 │   ├── my_orders/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
 │   └── profile/
-│       ├── data/
-│       ├── domain/
-│       └── presentation/
 │
 └── main.dart
 ```
 
 ---
 
-# 🧰 Technologies
-
-| Technology         | Usage                  |
-| ------------------ | ---------------------- |
-| Flutter            | Mobile App Development |
-| Dart               | Programming Language   |
-| BLoC               | State Management       |
-| Clean Architecture | Project Architecture   |
-| Figma              | UI/UX Reference        |
-| SVG                | Icons & Graphics       |
-| Git                | Version Control        |
-| GitHub             | Source Code Management |
-| Android Studio     | Development            |
-| VS Code            | Development            |
-
----
-
-# 📱 Main Screens
-
-```text
-Splash
-Login
-Sign Up
-Forgot Password
-Verification
-
-Home
-Search
-Food Category
-Restaurant Details
-Food Details
-
-Cart
-Edit Cart
-
-Payment Method
-Add Card
-Payment Success
-
-Order Tracking
-Delivery Man Call
-Delivery Man Message
-
-My Orders
-
-Profile
-Personal Information
-Edit Profile
-My Address
-Add Address
-```
-
----
-
-# 🎓 Week 8 Internship
-
-## Owasoft Technologies Pvt. Ltd.
-
-**Internship:** Flutter Development Internship
-**Project:** Food Delivery App
-**Week:** Week 8
-**Role:** Flutter Developer Intern
-
-### Week 8 Work
-
-During Week 8, I worked on converting a provided Figma Food Delivery App design into a Flutter application.
-
-### Main Tasks
-
-* Analyzed the Figma design
-* Created Flutter screen layouts
-* Converted Figma components into Flutter widgets
-* Created reusable UI components
-* Implemented navigation
-* Implemented BLoC state management
-* Applied Clean Architecture
-* Developed food browsing screens
-* Developed food details
-* Developed cart functionality
-* Developed payment screens
-* Developed order tracking
-* Developed My Orders
-* Developed profile screens
-* Implemented address management
-* Added UI interactions and animations
-* Fixed Flutter and Gradle issues
-* Tested the application
-
----
-
-# 📚 Learning Outcomes
-
-Through this Week 8 project, I strengthened my practical knowledge of:
-
-* Flutter UI development
-* Dart
-* Figma-to-Flutter conversion
-* Clean Architecture
-* BLoC
-* Events and States
-* Repository Pattern
-* Use Cases
-* Data Sources
-* Navigation
-* Nested navigation
-* Reusable widgets
-* Responsive UI
-* Animation and interaction
-* Git and GitHub
-* Debugging Flutter applications
-
----
-
 # 🛠️ Installation
 
-### Clone Repository
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/SaudMasood/food-delivery-app.git
 ```
 
-### Open Project
+### 2️⃣ Open Project
 
 ```bash
 cd food-delivery-app
 ```
 
-### Install Dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-### Run Application
+### 4️⃣ Run Application
 
 ```bash
 flutter run
@@ -503,7 +501,7 @@ flutter run
 flutter build apk --release
 ```
 
-APK location:
+APK:
 
 ```text
 build/app/outputs/flutter-apk/app-release.apk
@@ -519,8 +517,6 @@ flutter build apk --split-per-abi
 
 # 🧹 Clean Build
 
-If you experience Flutter or Gradle build problems:
-
 ```bash
 flutter clean
 flutter pub get
@@ -529,7 +525,7 @@ flutter build apk --release
 
 ---
 
-# 🧪 Analyze Project
+# 🧪 Code Analysis
 
 ```bash
 flutter analyze
@@ -537,73 +533,112 @@ flutter analyze
 
 ---
 
-# 🔮 Future Improvements
+# 🚀 Future Improvements
 
-Possible future improvements:
+```text
+🔥 Firebase Authentication
+🔥 Firebase Firestore
+🔥 REST API Integration
+🔥 Real Payment Gateway
+🔥 Google Maps
+🔥 Real-Time Order Tracking
+🔥 Push Notifications
+🔥 Restaurant Dashboard
+🔥 Admin Dashboard
+🔥 User Reviews
+```
 
-* Firebase Authentication
-* Firebase Firestore
-* REST API integration
-* Real restaurant data
-* Real food ordering backend
-* Real payment gateway
-* Google Maps integration
-* Real-time delivery tracking
-* Push notifications
-* Restaurant management
-* Admin dashboard
-* User reviews and ratings
+---
+
+# 📚 Learning Outcomes
+
+This project helped strengthen practical experience in:
+
+```text
+Flutter
+   ↓
+Dart
+   ↓
+Figma → Flutter
+   ↓
+Reusable Widgets
+   ↓
+Navigation
+   ↓
+BLoC
+   ↓
+Clean Architecture
+   ↓
+Repository Pattern
+   ↓
+Use Cases
+   ↓
+UI Animation
+   ↓
+Git & GitHub
+```
 
 ---
 
 # 👨‍💻 Developer
 
-## Saud Masood
+<p align="center">
 
-**BS Computer Science Student**
-**National Skills University, Islamabad**
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&duration=3000&pause=1000&color=FF7622&center=true&vCenter=true&width=600&lines=Saud+Masood;Flutter+Developer;Computer+Science+Student;Owasoft+Flutter+Intern" />
+
+</p>
+
+**Saud Masood**
+BS Computer Science
+National Skills University, Islamabad
 
 **Flutter Developer Intern — Owasoft Technologies Pvt. Ltd.**
 
-### Technical Skills
+---
 
-* Flutter
-* Dart
-* BLoC
-* Clean Architecture
-* Firebase
-* REST APIs
-* Git & GitHub
-* Python
-* Machine Learning
-* React.js
-* Node.js
+# 🔗 Repository
+
+<p align="center">
+
+<a href="https://github.com/SaudMasood/food-delivery-app">
+<img src="https://img.shields.io/badge/GitHub-Food%20Delivery%20App-181717?style=for-the-badge&logo=github">
+</a>
+
+</p>
 
 ---
 
-# 🔗 GitHub Repository
+# ⭐ Support
 
-**Food Delivery App**
-
-[https://github.com/SaudMasood/food-delivery-app](https://github.com/SaudMasood/food-delivery-app)
-
----
-
-# 📄 License
-
-This project was developed for **educational and internship purposes**.
+If you find this project useful, consider giving it a ⭐ on GitHub.
 
 ---
 
 <p align="center">
 
-### 🍔 Food Delivery App
-
-**Week 8 Flutter Internship Project**
-
-**Owasoft Technologies Pvt. Ltd.**
-
-Made with ❤️ using Flutter
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=140&section=footer&animation=fadeIn" width="100%"/>
 
 </p>
+
+<p align="center">
+  🍔 <b>Food Delivery App</b> • Week 8 Internship Project
+  <br>
+  Built with ❤️ using Flutter
+</p>
 ```
+
+### ⭐ For an even more visual README
+
+If you have **actual screenshots or a screen-recording GIF of your Food Delivery App**, add this near the top:
+
+```markdown
+## 📱 App Preview
+
+<p align="center">
+  <img src="assets/readme/app-preview.gif" width="280">
+  <img src="assets/readme/home-screen.png" width="280">
+  <img src="assets/readme/cart-screen.png" width="280">
+</p>
+```
+
+much more visually attractive** than using only text and badges.
