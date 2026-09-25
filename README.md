@@ -627,17 +627,4 @@ If you find this project useful, consider giving it a ⭐ on GitHub.
 </p>
 ```
 
-### ⭐ For an even more visual README
-
-If you have **actual screenshots or a screen-recording GIF of your Food Delivery App**, add this near the top:
-
-```markdown
-## 📱 App Preview
-
-<p align="center">
-  <img src="assets/readme/app-preview.gif" width="280">
-  <img src="assets/readme/home-screen.png" width="280">
-  <img src="assets/readme/cart-screen.png" width="280">
-</p>
-```
 
