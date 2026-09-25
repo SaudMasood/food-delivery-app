@@ -61,72 +61,9 @@ class MyCartView extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(
-                    child: Container(
-                      width: double.infinity,
-                      color: const Color(0xFF111122),
-                      padding: const EdgeInsets.fromLTRB(
-                        18,
-                        28,
-                        18,
-                        20,
-                      ),
-                      child: Column(
-                        children: [
-                          _buildHeader(context),
-
-                          const SizedBox(height: 20),
-
-                          Expanded(
-                            child: state.items.isEmpty
-                                ? _buildEmptyCart()
-                                : ListView.separated(
-                              padding: EdgeInsets.zero,
-                              itemCount: state.items.length,
-                              separatorBuilder: (_, __) {
-                                return const SizedBox(
-                                  height: 20,
-                                );
-                              },
-                              itemBuilder: (context, index) {
-                                final item =
-                                state.items[index];
-
-                                return CartItemCard(
-                                  item: item,
-                                  showDelete: true,
-                                  onIncrease: () {
-                                    context
-                                        .read<CartBloc>()
-                                        .add(
-                                      IncreaseCartItem(
-                                        item.id,
-                                      ),
-                                    );
-                                  },
-                                  onDecrease: () {
-                                    context
-                                        .read<CartBloc>()
-                                        .add(
-                                      DecreaseCartItem(
-                                        item.id,
-                                      ),
-                                    );
-                                  },
-                                  onRemove: () {
-                                    context
-                                        .read<CartBloc>()
-                                        .add(
-                                      RemoveCartItem(
-                                        item.id,
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: _buildCartContent(
+                      context,
+                      state,
                     ),
                   ),
 
@@ -142,27 +79,75 @@ class MyCartView extends StatelessWidget {
     );
   }
 
+  Widget _buildCartContent(
+      BuildContext context,
+      CartLoaded state,
+      ) {
+    return Container(
+      width: double.infinity,
+      color: const Color(0xFF111122),
+      padding: const EdgeInsets.fromLTRB(
+        18,
+        28,
+        18,
+        20,
+      ),
+      child: Column(
+        children: [
+          _buildHeader(context),
+
+          const SizedBox(height: 20),
+
+          Expanded(
+            child: state.items.isEmpty
+                ? _buildEmptyCart()
+                : ListView.separated(
+              padding: EdgeInsets.zero,
+              itemCount: state.items.length,
+              separatorBuilder: (_, __) {
+                return const SizedBox(
+                  height: 20,
+                );
+              },
+              itemBuilder: (context, index) {
+                final item = state.items[index];
+
+                return CartItemCard(
+                  item: item,
+
+                  // NO DELETE BUTTON ON NORMAL CART
+                  showDelete: false,
+
+                  onIncrease: () {
+                    context.read<CartBloc>().add(
+                      IncreaseCartItem(
+                        item.id,
+                      ),
+                    );
+                  },
+
+                  onDecrease: () {
+                    context.read<CartBloc>().add(
+                      DecreaseCartItem(
+                        item.id,
+                      ),
+                    );
+                  },
+
+                  onRemove: () {},
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildHeader(BuildContext context) {
     return Row(
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            width: 38,
-            height: 38,
-            decoration: const BoxDecoration(
-              color: Color(0xFF29293B),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.white,
-              size: 16,
-            ),
-          ),
-        ),
+        _buildBackButton(context),
 
         const SizedBox(width: 14),
 
@@ -184,12 +169,9 @@ class MyCartView extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) {
-                  return BlocProvider.value(
-                    value: cartBloc,
-                    child: const EditCartView(),
-                  );
-                },
+                builder: (_) => EditCartPage(
+                  cartBloc: cartBloc,
+                ),
               ),
             );
           },
@@ -203,6 +185,27 @@ class MyCartView extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildBackButton(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+        width: 38,
+        height: 38,
+        decoration: const BoxDecoration(
+          color: Color(0xFF29293B),
+          shape: BoxShape.circle,
+        ),
+        child: const Icon(
+          Icons.arrow_back_ios_new,
+          color: Colors.white,
+          size: 16,
+        ),
+      ),
     );
   }
 

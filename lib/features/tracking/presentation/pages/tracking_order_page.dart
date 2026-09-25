@@ -31,7 +31,9 @@ class TrackingView extends StatelessWidget {
           builder: (context, state) {
             if (state is! TrackingLoaded) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Color(0xFFFF7622),
+                ),
               );
             }
 
@@ -71,8 +73,8 @@ class TrackingView extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Container(
-              width: 32,
-              height: 32,
+              width: 46,
+              height: 46,
               decoration: const BoxDecoration(
                 color: Color(0xFF1E1D27),
                 shape: BoxShape.circle,
@@ -80,30 +82,30 @@ class TrackingView extends StatelessWidget {
               child: const Icon(
                 Icons.arrow_back_ios_new,
                 color: Colors.white,
-                size: 13,
+                size: 20,
               ),
             ),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: 13),
           const Text(
             'Track Order',
             style: TextStyle(
-              fontSize: 8,
+              fontSize: 18,
               color: Color(0xFF20242F),
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
           ),
           const Spacer(),
           Container(
-            width: 32,
-            height: 32,
+            width: 46,
+            height: 46,
             decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
             ),
             child: const Icon(
               Icons.my_location,
-              size: 15,
+              size: 22,
               color: Color(0xFF20242F),
             ),
           ),
@@ -127,28 +129,31 @@ class TrackingView extends StatelessWidget {
           );
         },
         child: Container(
-          height: 94,
+          height: 135,
           padding: const EdgeInsets.fromLTRB(
-            14,
-            8,
-            14,
-            10,
+            18,
+            11,
+            18,
+            15,
           ),
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
+              topLeft: Radius.circular(22),
+              topRight: Radius.circular(22),
             ),
           ),
           child: Column(
             children: [
               _buildHandle(),
-              const SizedBox(height: 8),
+              const SizedBox(height: 13),
               Row(
                 children: [
-                  _restaurantImage(),
-                  const SizedBox(width: 9),
+                  _restaurantImage(
+                    width: 68,
+                    height: 68,
+                  ),
+                  const SizedBox(width: 13),
                   Expanded(
                     child: Column(
                       crossAxisAlignment:
@@ -158,24 +163,31 @@ class TrackingView extends StatelessWidget {
                       children: [
                         Text(
                           state.order.restaurant,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            fontSize: 9,
+                            fontSize: 16,
                             fontWeight: FontWeight.w600,
+                            color: Color(0xFF20242F),
                           ),
                         ),
-                        const SizedBox(height: 3),
+                        const SizedBox(height: 6),
                         Text(
                           state.order.orderTime,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            fontSize: 6,
+                            fontSize: 12,
                             color: Color(0xFF9BA5BC),
                           ),
                         ),
-                        const SizedBox(height: 3),
+                        const SizedBox(height: 4),
                         Text(
                           state.order.items,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            fontSize: 6,
+                            fontSize: 12,
                             color: Color(0xFF555555),
                           ),
                         ),
@@ -184,7 +196,7 @@ class TrackingView extends StatelessWidget {
                   ),
                   const Icon(
                     Icons.keyboard_arrow_up,
-                    size: 17,
+                    size: 27,
                     color: Color(0xFF9BA5BC),
                   ),
                 ],
@@ -206,42 +218,33 @@ class TrackingView extends StatelessWidget {
       bottom: 0,
       child: Container(
         padding: const EdgeInsets.fromLTRB(
-          18,
-          7,
-          18,
-          8,
+          20,
+          11,
+          20,
+          16,
         ),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
+            topLeft: Radius.circular(26),
+            topRight: Radius.circular(26),
           ),
         ),
         child: Column(
           children: [
             _buildHandle(),
-
-            const SizedBox(height: 10),
-
+            const SizedBox(height: 15),
             _buildRestaurantInfo(
               context,
               state,
             ),
-
-            const SizedBox(height: 12),
-
+            const SizedBox(height: 18),
             _buildDeliveryTime(),
-
-            const SizedBox(height: 15),
-
+            const SizedBox(height: 20),
             _buildTrackingSteps(),
-
-            const SizedBox(height: 5),
-
+            const SizedBox(height: 10),
             _buildCourierCard(context),
-
-            const SizedBox(height: 3),
+            const SizedBox(height: 5),
           ],
         ),
       ),
@@ -250,8 +253,8 @@ class TrackingView extends StatelessWidget {
 
   Widget _buildHandle() {
     return Container(
-      width: 38,
-      height: 4,
+      width: 45,
+      height: 5,
       decoration: BoxDecoration(
         color: const Color(0xFFD5DDE3),
         borderRadius: BorderRadius.circular(5),
@@ -266,10 +269,10 @@ class TrackingView extends StatelessWidget {
     return Row(
       children: [
         _restaurantImage(
-          width: 38,
-          height: 38,
+          width: 56,
+          height: 56,
         ),
-        const SizedBox(width: 9),
+        const SizedBox(width: 13),
         Expanded(
           child: Column(
             crossAxisAlignment:
@@ -277,24 +280,31 @@ class TrackingView extends StatelessWidget {
             children: [
               Text(
                 state.order.restaurant,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  fontSize: 9,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
+                  color: Color(0xFF20242F),
                 ),
               ),
-              const SizedBox(height: 3),
+              const SizedBox(height: 6),
               Text(
                 state.order.orderTime,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  fontSize: 6,
+                  fontSize: 12,
                   color: Color(0xFF9BA5BC),
                 ),
               ),
-              const SizedBox(height: 3),
+              const SizedBox(height: 4),
               Text(
                 state.order.items,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  fontSize: 6,
+                  fontSize: 12,
                   color: Color(0xFF9BA5BC),
                 ),
               ),
@@ -309,7 +319,7 @@ class TrackingView extends StatelessWidget {
           },
           child: const Icon(
             Icons.keyboard_arrow_down,
-            size: 17,
+            size: 28,
             color: Color(0xFF9BA5BC),
           ),
         ),
@@ -324,21 +334,22 @@ class TrackingView extends StatelessWidget {
           '20 min',
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 19,
+            fontSize: 30,
             height: 1,
             fontWeight: FontWeight.bold,
             color: Color(0xFF20242F),
           ),
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 8),
         Text(
           'ESTIMATED DELIVERY TIME',
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 6,
+            fontSize: 10,
             height: 1,
             color: Color(0xFF9BA5BC),
-            letterSpacing: 0.3,
+            letterSpacing: 0.6,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ],
@@ -378,33 +389,32 @@ class TrackingView extends StatelessWidget {
       bool showLine,
       ) {
     return SizedBox(
-      height: 28,
+      height: 40,
       child: Row(
         crossAxisAlignment:
         CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: 16,
-            height: 28,
+            width: 24,
+            height: 40,
             child: Stack(
               children: [
                 if (showLine)
                   Positioned(
-                    left: 7,
-                    top: 10,
+                    left: 10,
+                    top: 15,
                     bottom: 0,
                     child: Container(
                       width: 2,
                       color: const Color(0xFFD0D5D9),
                     ),
                   ),
-
                 Positioned(
-                  left: 2,
+                  left: 3,
                   top: 5,
                   child: Container(
-                    width: 11,
-                    height: 11,
+                    width: 16,
+                    height: 16,
                     decoration: BoxDecoration(
                       color: active
                           ? const Color(0xFFFF7622)
@@ -414,14 +424,14 @@ class TrackingView extends StatelessWidget {
                         color: active
                             ? const Color(0xFFFF7622)
                             : const Color(0xFFC8CDD2),
-                        width: 1,
+                        width: 1.2,
                       ),
                     ),
                     child: active
                         ? const Icon(
                       Icons.check,
                       color: Colors.white,
-                      size: 7,
+                      size: 10,
                     )
                         : null,
                   ),
@@ -429,9 +439,7 @@ class TrackingView extends StatelessWidget {
               ],
             ),
           ),
-
-          const SizedBox(width: 8),
-
+          const SizedBox(width: 10),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(
@@ -440,11 +448,12 @@ class TrackingView extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  fontSize: 7,
-                  height: 1.1,
+                  fontSize: 13,
+                  height: 1.2,
                   color: active
                       ? const Color(0xFFFF7622)
                       : const Color(0xFF9BA5BC),
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
@@ -459,14 +468,14 @@ class TrackingView extends StatelessWidget {
       ) {
     return Container(
       width: double.infinity,
-      height: 67,
+      height: 86,
       padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 8,
+        horizontal: 13,
+        vertical: 11,
       ),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(11),
+        borderRadius: BorderRadius.circular(14),
         border: Border.all(
           color: const Color(0xFFE9E9E9),
         ),
@@ -474,21 +483,19 @@ class TrackingView extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 36,
-            height: 36,
+            width: 54,
+            height: 54,
             decoration: const BoxDecoration(
               color: Color(0xFFDDE5EB),
               shape: BoxShape.circle,
             ),
             child: const Icon(
               Icons.person,
-              size: 18,
+              size: 28,
               color: Color(0xFF8999A7),
             ),
           ),
-
-          const SizedBox(width: 8),
-
+          const SizedBox(width: 13),
           const Column(
             mainAxisAlignment:
             MainAxisAlignment.center,
@@ -498,23 +505,22 @@ class TrackingView extends StatelessWidget {
               Text(
                 'Robert F.',
                 style: TextStyle(
-                  fontSize: 10,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
+                  color: Color(0xFF20242F),
                 ),
               ),
-              SizedBox(height: 2),
+              SizedBox(height: 5),
               Text(
                 'Courier',
                 style: TextStyle(
-                  fontSize: 7,
+                  fontSize: 12,
                   color: Color(0xFF9BA5BC),
                 ),
               ),
             ],
           ),
-
           const Spacer(),
-
           _courierButton(
             Icons.phone,
                 () {
@@ -527,9 +533,7 @@ class TrackingView extends StatelessWidget {
               );
             },
           ),
-
-          const SizedBox(width: 8),
-
+          const SizedBox(width: 11),
           _courierButton(
             Icons.chat_bubble,
                 () {
@@ -554,8 +558,8 @@ class TrackingView extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 34,
-        height: 34,
+        width: 46,
+        height: 46,
         decoration: BoxDecoration(
           color: const Color(0xFFFF7622),
           shape: BoxShape.circle,
@@ -570,25 +574,25 @@ class TrackingView extends StatelessWidget {
         child: Icon(
           icon,
           color: Colors.white,
-          size: 15,
+          size: 21,
         ),
       ),
     );
   }
 
   Widget _restaurantImage({
-    double width = 55,
-    double height = 55,
+    double width = 62,
+    double height = 62,
   }) {
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
         color: const Color(0xFFE7EDF0),
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(9),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(9),
         child: Image.asset(
           'assets/images/rose_garden.png',
           fit: BoxFit.cover,

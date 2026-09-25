@@ -15,6 +15,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
 
+  final GlobalKey<NavigatorState> navigatorKey =
+  GlobalKey<NavigatorState>();
+
   final List<Widget> screens = [
     const HomePage(),
     const MyOrdersPage(),
@@ -25,7 +28,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[currentIndex],
+      body: Navigator(
+        key: navigatorKey,
+        onGenerateRoute: (settings) {
+          return MaterialPageRoute(
+            builder: (_) => screens[currentIndex],
+          );
+        },
+      ),
       bottomNavigationBar: _buildBottomBar(),
     );
   }
@@ -69,6 +79,13 @@ class _MainScreenState extends State<MainScreen> {
         setState(() {
           currentIndex = index;
         });
+
+        navigatorKey.currentState?.pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (_) => screens[index],
+          ),
+              (route) => false,
+        );
       },
       child: SizedBox(
         width: 55,

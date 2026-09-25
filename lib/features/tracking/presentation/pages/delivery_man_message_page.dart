@@ -72,6 +72,8 @@ class _DeliveryManMessagePageState
 
     final hour = now.hour > 12
         ? now.hour - 12
+        : now.hour == 0
+        ? 12
         : now.hour;
 
     final minute =
@@ -92,7 +94,7 @@ class _DeliveryManMessagePageState
           margin: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(14),
           ),
           child: Column(
             children: [
@@ -108,15 +110,13 @@ class _DeliveryManMessagePageState
     );
   }
 
-  Widget _buildHeader(
-      BuildContext context,
-      ) {
+  Widget _buildHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
-        12,
-        12,
-        12,
-        8,
+        16,
+        16,
+        16,
+        10,
       ),
       child: Row(
         children: [
@@ -125,26 +125,26 @@ class _DeliveryManMessagePageState
               Navigator.pop(context);
             },
             child: Container(
-              width: 25,
-              height: 25,
+              width: 38,
+              height: 38,
               decoration: const BoxDecoration(
                 color: Color(0xFFF0F3F6),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.close,
-                size: 11,
+                size: 19,
+                color: Color(0xFF20242F),
               ),
             ),
           ),
-
-          const SizedBox(width: 8),
-
+          const SizedBox(width: 12),
           const Text(
             'Robert Fox',
             style: TextStyle(
-              fontSize: 8,
-              fontWeight: FontWeight.w500,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: Color(0xFF20242F),
             ),
           ),
         ],
@@ -154,12 +154,11 @@ class _DeliveryManMessagePageState
 
   Widget _buildMessages() {
     return ListView.builder(
-      reverse: false,
       padding: const EdgeInsets.fromLTRB(
+        16,
+        16,
+        16,
         12,
-        12,
-        12,
-        10,
       ),
       itemCount: messages.length,
       itemBuilder: (context, index) {
@@ -170,12 +169,10 @@ class _DeliveryManMessagePageState
     );
   }
 
-  Widget _buildMessage(
-      Message message,
-      ) {
+  Widget _buildMessage(Message message) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 15,
+        bottom: 18,
       ),
       child: Column(
         crossAxisAlignment: message.isMine
@@ -184,56 +181,59 @@ class _DeliveryManMessagePageState
         children: [
           Padding(
             padding: EdgeInsets.only(
-              left: message.isMine ? 0 : 30,
-              right: message.isMine ? 30 : 0,
+              left: message.isMine ? 0 : 42,
+              right: message.isMine ? 42 : 0,
             ),
             child: Text(
               message.time,
               style: const TextStyle(
-                fontSize: 5,
+                fontSize: 10,
                 color: Color(0xFF9BA5BC),
               ),
             ),
           ),
 
-          const SizedBox(height: 3),
+          const SizedBox(height: 5),
 
           Row(
             mainAxisAlignment: message.isMine
                 ? MainAxisAlignment.end
                 : MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               if (!message.isMine)
                 Container(
-                  width: 23,
-                  height: 23,
+                  width: 36,
+                  height: 36,
                   margin: const EdgeInsets.only(
-                    right: 7,
+                    right: 9,
                   ),
-                  decoration:
-                  const BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF9BAFC0),
                     shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.person,
+                    size: 20,
+                    color: Colors.white,
                   ),
                 ),
 
               Flexible(
                 child: Container(
-                  constraints:
-                  const BoxConstraints(
-                    maxWidth: 155,
+                  constraints: const BoxConstraints(
+                    maxWidth: 245,
                   ),
-                  padding:
-                  const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 8,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 11,
                   ),
                   decoration: BoxDecoration(
                     color: message.isMine
                         ? const Color(0xFFFF7622)
                         : const Color(0xFFF0F4F8),
                     borderRadius:
-                    BorderRadius.circular(6),
+                    BorderRadius.circular(10),
                   ),
                   child: Text(
                     message.text,
@@ -241,7 +241,8 @@ class _DeliveryManMessagePageState
                       color: message.isMine
                           ? Colors.white
                           : const Color(0xFF555555),
-                      fontSize: 7,
+                      fontSize: 13,
+                      height: 1.3,
                     ),
                   ),
                 ),
@@ -249,15 +250,19 @@ class _DeliveryManMessagePageState
 
               if (message.isMine)
                 Container(
-                  width: 23,
-                  height: 23,
+                  width: 36,
+                  height: 36,
                   margin: const EdgeInsets.only(
-                    left: 7,
+                    left: 9,
                   ),
-                  decoration:
-                  const BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFFFC5B0),
                     shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.person,
+                    size: 20,
+                    color: Colors.white,
                   ),
                 ),
             ],
@@ -269,24 +274,24 @@ class _DeliveryManMessagePageState
 
   Widget _buildInput() {
     return Container(
-      margin: const EdgeInsets.all(10),
-      height: 35,
+      margin: const EdgeInsets.all(14),
+      height: 50,
       padding: const EdgeInsets.symmetric(
-        horizontal: 9,
+        horizontal: 12,
       ),
       decoration: BoxDecoration(
         color: const Color(0xFFF0F4F8),
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         children: [
           const Icon(
             Icons.emoji_emotions_outlined,
-            size: 13,
+            size: 22,
             color: Color(0xFF9BA5BC),
           ),
 
-          const SizedBox(width: 6),
+          const SizedBox(width: 9),
 
           Expanded(
             child: TextField(
@@ -295,12 +300,13 @@ class _DeliveryManMessagePageState
                 _sendMessage();
               },
               style: const TextStyle(
-                fontSize: 8,
+                fontSize: 13,
+                color: Color(0xFF20242F),
               ),
               decoration: const InputDecoration(
                 hintText: 'Write something',
                 hintStyle: TextStyle(
-                  fontSize: 8,
+                  fontSize: 13,
                   color: Color(0xFF9BA5BC),
                 ),
                 border: InputBorder.none,
@@ -312,15 +318,15 @@ class _DeliveryManMessagePageState
           GestureDetector(
             onTap: _sendMessage,
             child: Container(
-              width: 25,
-              height: 25,
+              width: 34,
+              height: 34,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.send,
-                size: 13,
+                size: 18,
                 color: Color(0xFFFF7622),
               ),
             ),

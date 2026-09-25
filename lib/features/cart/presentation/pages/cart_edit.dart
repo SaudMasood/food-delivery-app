@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/cart_bloc.dart';
 import '../bloc/cart_event.dart';
 import '../bloc/cart_state.dart';
-import '../widgets/cart_bottom.dart';
 import '../widgets/cart_item_card.dart';
 
 class EditCartPage extends StatelessWidget {
@@ -32,7 +31,9 @@ class EditCartPage extends StatelessWidget {
 }
 
 class EditCartView extends StatelessWidget {
-  const EditCartView({super.key});
+  const EditCartView({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,74 +58,77 @@ class EditCartView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Container(
-                      width: double.infinity,
-                      color: const Color(0xFF111122),
-                      padding: const EdgeInsets.fromLTRB(
-                        18,
-                        28,
-                        18,
-                        20,
-                      ),
-                      child: Column(
-                        children: [
-                          _buildHeader(context),
+              child: Container(
+                width: double.infinity,
+                color: const Color(0xFF111122),
+                padding: const EdgeInsets.fromLTRB(
+                  18,
+                  28,
+                  18,
+                  20,
+                ),
+                child: Column(
+                  children: [
+                    _buildHeader(context),
 
-                          const SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
-                          Expanded(
-                            child: state.items.isEmpty
-                                ? _buildEmptyCart()
-                                : ListView.separated(
-                              padding: EdgeInsets.zero,
-                              itemCount: state.items.length,
-                              separatorBuilder: (_, __) {
-                                return const SizedBox(
-                                  height: 20,
-                                );
-                              },
-                              itemBuilder: (context, index) {
-                                final item =
-                                state.items[index];
+                    Expanded(
+                      child: state.items.isEmpty
+                          ? _buildEmptyCart()
+                          : ListView.separated(
+                        padding: EdgeInsets.zero,
+                        itemCount: state.items.length,
+                        separatorBuilder: (_, __) {
+                          return const SizedBox(
+                            height: 20,
+                          );
+                        },
+                        itemBuilder: (context, index) {
+                          final item =
+                          state.items[index];
 
-                                return CartItemCard(
-                                  item: item,
-                                  showDelete: false,
-                                  onIncrease: () {
-                                    context
-                                        .read<CartBloc>()
-                                        .add(
-                                      IncreaseCartItem(
-                                        item.id,
-                                      ),
-                                    );
-                                  },
-                                  onDecrease: () {
-                                    context
-                                        .read<CartBloc>()
-                                        .add(
-                                      DecreaseCartItem(
-                                        item.id,
-                                      ),
-                                    );
-                                  },
-                                  onRemove: () {},
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+                          return CartItemCard(
+                            item: item,
+
+                            // DELETE BUTTON ONLY IN EDIT CART
+                            showDelete: true,
+
+                            onIncrease: () {
+                              context
+                                  .read<CartBloc>()
+                                  .add(
+                                IncreaseCartItem(
+                                  item.id,
+                                ),
+                              );
+                            },
+
+                            onDecrease: () {
+                              context
+                                  .read<CartBloc>()
+                                  .add(
+                                DecreaseCartItem(
+                                  item.id,
+                                ),
+                              );
+                            },
+
+                            onRemove: () {
+                              context
+                                  .read<CartBloc>()
+                                  .add(
+                                RemoveCartItem(
+                                  item.id,
+                                ),
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
-                  ),
-
-                  CartBottom(
-                    total: state.total,
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },

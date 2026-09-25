@@ -37,7 +37,9 @@ class PaymentMethodView extends StatelessWidget {
           builder: (context, state) {
             if (state is! PaymentLoaded) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Color(0xFFFF7622),
+                ),
               );
             }
 
@@ -49,26 +51,26 @@ class PaymentMethodView extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 padding: const EdgeInsets.fromLTRB(
-                  11,
-                  18,
-                  11,
                   14,
+                  20,
+                  14,
+                  16,
                 ),
                 child: Column(
                   children: [
                     _buildHeader(context),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 22),
 
                     _buildPaymentMethods(
                       context,
                       state,
                     ),
 
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 18),
 
                     Expanded(
                       child: _buildCardSection(
@@ -79,7 +81,7 @@ class PaymentMethodView extends StatelessWidget {
 
                     _buildTotal(state),
 
-                    const SizedBox(height: 14),
+                    const SizedBox(height: 16),
 
                     _buildPayButton(context),
                   ],
@@ -100,24 +102,28 @@ class PaymentMethodView extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Container(
-            width: 30,
-            height: 30,
+            width: 40,
+            height: 40,
             decoration: const BoxDecoration(
               color: Color(0xFFF0F3F6),
               shape: BoxShape.circle,
             ),
             child: const Icon(
               Icons.arrow_back_ios_new,
-              size: 12,
+              size: 17,
+              color: Color(0xFF20242F),
             ),
           ),
         ),
-        const SizedBox(width: 12),
+
+        const SizedBox(width: 14),
+
         const Text(
           'Payment',
           style: TextStyle(
-            fontSize: 9,
-            fontWeight: FontWeight.w500,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
       ],
@@ -129,7 +135,7 @@ class PaymentMethodView extends StatelessWidget {
       PaymentLoaded state,
       ) {
     return SizedBox(
-      height: 63,
+      height: 72,
       child: Row(
         children: [
           _buildPaymentMethod(
@@ -167,8 +173,7 @@ class PaymentMethodView extends StatelessWidget {
     required String name,
     required String icon,
   }) {
-    final selected =
-        state.selectedMethod == name;
+    final selected = state.selectedMethod == name;
 
     return Expanded(
       child: GestureDetector(
@@ -178,20 +183,20 @@ class PaymentMethodView extends StatelessWidget {
           );
         },
         child: Container(
-          height: 63,
+          height: 72,
           margin: const EdgeInsets.only(
-            right: 6,
+            right: 7,
           ),
           decoration: BoxDecoration(
             color: selected
                 ? const Color(0xFFFFF8F3)
                 : const Color(0xFFF1F5F8),
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(7),
             border: Border.all(
               color: selected
                   ? const Color(0xFFFF7622)
                   : Colors.transparent,
-              width: 1,
+              width: 1.2,
             ),
           ),
           child: Stack(
@@ -202,19 +207,22 @@ class PaymentMethodView extends StatelessWidget {
                   MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 27,
-                      height: 22,
+                      width: 32,
+                      height: 26,
                       child: SvgPicture.asset(
                         icon,
                         fit: BoxFit.contain,
                       ),
                     ),
-                    const SizedBox(height: 3),
+
+                    const SizedBox(height: 5),
+
                     Text(
                       name,
                       style: const TextStyle(
-                        fontSize: 7,
+                        fontSize: 10,
                         color: Color(0xFF555555),
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
@@ -226,8 +234,8 @@ class PaymentMethodView extends StatelessWidget {
                   top: -1,
                   right: -1,
                   child: Container(
-                    width: 15,
-                    height: 15,
+                    width: 19,
+                    height: 19,
                     decoration: const BoxDecoration(
                       color: Color(0xFFFF7622),
                       shape: BoxShape.circle,
@@ -235,7 +243,7 @@ class PaymentMethodView extends StatelessWidget {
                     child: const Icon(
                       Icons.check,
                       color: Colors.white,
-                      size: 10,
+                      size: 12,
                     ),
                   ),
                 ),
@@ -266,46 +274,47 @@ class PaymentMethodView extends StatelessWidget {
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(
-            vertical: 14,
+            vertical: 20,
+            horizontal: 12,
           ),
           decoration: BoxDecoration(
             color: const Color(0xFFF7F8FA),
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(7),
           ),
           child: Column(
             children: [
               Container(
-                width: 76,
-                height: 48,
+                width: 84,
+                height: 54,
                 decoration: BoxDecoration(
                   color: const Color(0xFFFF7622),
-                  borderRadius:
-                  BorderRadius.circular(7),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(
                   Icons.credit_card,
                   color: Colors.white,
-                  size: 25,
+                  size: 30,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 13),
 
               const Text(
                 'No master card added',
                 style: TextStyle(
-                  fontSize: 8,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF20242F),
                 ),
               ),
 
-              const SizedBox(height: 4),
+              const SizedBox(height: 6),
 
               const Text(
                 'You can add a mastercard and\nsave it for later',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 7,
+                  fontSize: 10,
                   color: Color(0xFF9BA5BC),
                   height: 1.5,
                 ),
@@ -314,7 +323,7 @@ class PaymentMethodView extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 8),
+        const SizedBox(height: 12),
 
         _buildAddButton(context),
       ],
@@ -331,24 +340,22 @@ class PaymentMethodView extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(13),
           decoration: BoxDecoration(
             color: const Color(0xFFF2F5F8),
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(7),
           ),
           child: Row(
             children: [
               Container(
-                width: 34,
-                height: 24,
+                width: 48,
+                height: 34,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius:
-                  BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 child: Padding(
-                  padding:
-                  const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(6),
                   child: SvgPicture.asset(
                     'assets/icons/master.svg',
                     fit: BoxFit.contain,
@@ -356,7 +363,7 @@ class PaymentMethodView extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(width: 8),
+              const SizedBox(width: 11),
 
               Expanded(
                 child: Column(
@@ -366,21 +373,21 @@ class PaymentMethodView extends StatelessWidget {
                     const Text(
                       'Master Card',
                       style: TextStyle(
-                        fontSize: 8,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF20242F),
                       ),
                     ),
 
-                    const SizedBox(height: 3),
+                    const SizedBox(height: 5),
 
                     Text(
                       _hideCardNumber(
                         card.cardNumber,
                       ),
                       style: const TextStyle(
-                        fontSize: 7,
-                        color:
-                        Color(0xFF9BA5BC),
+                        fontSize: 10,
+                        color: Color(0xFF9BA5BC),
                       ),
                     ),
                   ],
@@ -389,13 +396,14 @@ class PaymentMethodView extends StatelessWidget {
 
               const Icon(
                 Icons.keyboard_arrow_down,
-                size: 15,
+                size: 21,
+                color: Color(0xFF555555),
               ),
             ],
           ),
         ),
 
-        const SizedBox(height: 8),
+        const SizedBox(height: 12),
 
         _buildAddButton(context),
       ],
@@ -403,8 +411,7 @@ class PaymentMethodView extends StatelessWidget {
   }
 
   String _hideCardNumber(String number) {
-    final clean =
-    number.replaceAll(' ', '');
+    final clean = number.replaceAll(' ', '');
 
     if (clean.length <= 4) {
       return number;
@@ -413,13 +420,10 @@ class PaymentMethodView extends StatelessWidget {
     return '••••  ••••  ••••  ${clean.substring(clean.length - 4)}';
   }
 
-  Widget _buildAddButton(
-      BuildContext context,
-      ) {
+  Widget _buildAddButton(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        final bloc =
-        context.read<PaymentBloc>();
+        final bloc = context.read<PaymentBloc>();
 
         Navigator.push(
           context,
@@ -435,11 +439,10 @@ class PaymentMethodView extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 32,
+        height: 42,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius:
-          BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(7),
           border: Border.all(
             color: const Color(0xFFE5EAF0),
           ),
@@ -449,8 +452,8 @@ class PaymentMethodView extends StatelessWidget {
             '+  ADD NEW',
             style: TextStyle(
               color: Color(0xFFFF7622),
-              fontSize: 7,
-              fontWeight: FontWeight.w500,
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
@@ -458,36 +461,36 @@ class PaymentMethodView extends StatelessWidget {
     );
   }
 
-  Widget _buildTotal(
-      PaymentLoaded state,
-      ) {
+  Widget _buildTotal(PaymentLoaded state) {
     return Row(
       children: [
         const Text(
           'TOTAL:',
           style: TextStyle(
-            fontSize: 8,
+            fontSize: 11,
             color: Color(0xFF9BA5BC),
+            fontWeight: FontWeight.w500,
           ),
         ),
-        const SizedBox(width: 8),
+
+        const SizedBox(width: 9),
+
         Text(
           '\$${state.total.toStringAsFixed(0)}',
           style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
+            fontSize: 19,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF20242F),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildPayButton(
-      BuildContext context,
-      ) {
+  Widget _buildPayButton(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 40,
+      height: 48,
       child: ElevatedButton(
         onPressed: () {
           context.read<PaymentBloc>().add(
@@ -503,20 +506,17 @@ class PaymentMethodView extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor:
-          const Color(0xFFFF7622),
+          backgroundColor: const Color(0xFFFF7622),
           elevation: 0,
-          shape:
-          RoundedRectangleBorder(
-            borderRadius:
-            BorderRadius.circular(6),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
           ),
         ),
         child: const Text(
           'PAY & CONFIRM',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 8,
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),
