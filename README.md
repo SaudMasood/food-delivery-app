@@ -1,4 +1,4 @@
-````markdown
+markdown
 # 🍔 Food Delivery App
 
 <p align="center">
