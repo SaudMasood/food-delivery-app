@@ -641,4 +641,3 @@ If you have **actual screenshots or a screen-recording GIF of your Food Delivery
 </p>
 ```
 
-much more visually attractive** than using only text and badges.
