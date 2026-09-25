@@ -1,266 +1,202 @@
-# 🍔 Food Delivery App
+# 🍔 Food Delivery App — Week 8 Internship Project
 
 <p align="center">
   <img src="assets/images/food_logo.svg" width="120" alt="Food Delivery App Logo">
 </p>
 
 <p align="center">
-  <b>A modern Flutter Food Delivery Application built during my Flutter Internship at Owasoft Technologies Pvt. Ltd.</b>
+  <b>Modern Food Delivery Mobile Application built with Flutter</b>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter">
   <img src="https://img.shields.io/badge/Dart-3.x-blue?logo=dart">
-  <img src="https://img.shields.io/badge/Architecture-Clean%20Architecture-orange">
-  <img src="https://img.shields.io/badge/State%20Management-BLoC-purple">
-  <img src="https://img.shields.io/badge/Platform-Android-green?logo=android">
-  <img src="https://img.shields.io/badge/Internship-Owasoft%20Technologies-red">
+  <img src="https://img.shields.io/badge/BLoC-State%20Management-purple">
+  <img src="https://img.shields.io/badge/Clean%20Architecture-orange">
+  <img src="https://img.shields.io/badge/Week%208-Internship-red">
+  <img src="https://img.shields.io/badge/Owasoft-Technologies-green">
 </p>
 
 ---
 
-## 📱 About The Project
+## 🚀 About The Project
 
-**Food Delivery App** is a modern Flutter mobile application designed to provide a complete food ordering experience.
+**Food Delivery App** is my **Week 8 Flutter Internship Project** at **Owasoft Technologies Pvt. Ltd.**
 
-The application was developed as part of my **Flutter Internship at Owasoft Technologies Pvt. Ltd.**
+The project was developed from a provided **Figma Food Delivery App design** and converted into a functional Flutter mobile application.
 
-The project focuses on:
+The main focus of Week 8 was:
 
-- Modern Flutter UI development
-- Figma-to-Flutter implementation
-- Clean Architecture
-- BLoC state management
-- Food browsing
-- Search functionality
-- Restaurant browsing
-- Food details
-- Shopping cart
-- Address management
-- Payment methods
-- Order management
-- Order tracking
-- User profile management
-
-The application is structured to keep the presentation, business logic, and data layers separated and maintainable.
+* 🎨 Figma to Flutter UI implementation
+* 📱 Responsive mobile UI
+* 🧩 Reusable Flutter widgets
+* 🏗️ Clean Architecture
+* 🔄 BLoC state management
+* 🧭 Screen navigation
+* 🛒 Food ordering flow
+* 💳 Payment flow
+* 📍 Order tracking
+* 👤 Profile and address management
+* ✨ UI animations and interactive elements
 
 ---
 
-# ✨ Features
+# ✨ Key Features
 
-## 🏠 Home
+### 🏠 Home
 
-- Food delivery home screen
-- User greeting
-- Search food and restaurants
-- Food categories
-- Popular foods
-- Food cards
-- Promotional offers
-- Restaurant sections
-- Navigation to food details
-- Navigation to restaurant details
+* Food categories
+* Popular foods
+* Search
+* Restaurants
+* Promotional offers
+* Food cards
+* Navigation to food details
 
----
+### 🔎 Search
 
-## 🔎 Search
+* Search foods
+* Search restaurants
+* Recent searches
+* Suggested restaurants
+* Search results
 
-Users can search for:
+### 🍔 Food Details
 
-- Foods
-- Restaurants
-- Popular keywords
+* Food image
+* Restaurant information
+* Rating
+* Description
+* Food size selection
+* Ingredients
+* Quantity selector
+* Price
+* Add to cart
 
-### Search Features
+### 🛒 Cart
 
-- Search bar
-- Recent searches
-- Suggested restaurants
-- Food search results
-- Restaurant search
-- Food details navigation
-- Category navigation
+* Cart items
+* Quantity management
+* Price calculation
+* Edit cart
+* Remove items
+* Checkout
 
----
+### 💳 Payment
 
-## 🍔 Food Categories
+Supported payment options:
 
-Users can browse foods according to categories.
+* Cash
+* Visa
+* Mastercard
+* PayPal
 
-Available examples:
+Also includes:
 
-- Burger
-- Pizza
-- Sandwich
-- Sushi
-- Hot Dog
+* Add new card
+* Saved card
+* Payment confirmation
+* Payment success screen
 
-Category selection dynamically updates the displayed food list.
+### 📍 Order Tracking
 
----
+* Order information
+* Estimated delivery time
+* Delivery progress
+* Delivery person details
+* Call delivery person
+* Message delivery person
+* Tracking interface
 
-## 🍕 Food Details
+### 📦 My Orders
 
-The food details screen provides:
+* Ongoing orders
+* Completed orders
+* Canceled orders
+* Track order
+* Cancel order
+* Rate order
+* Re-order
 
-- Food image
-- Food name
-- Restaurant name
-- Rating
-- Delivery information
-- Food description
-- Size selection
-- Ingredient selection
-- Quantity selector
-- Food price
-- Add to cart functionality
+### 👤 Profile
 
----
-
-## 🛒 Shopping Cart
-
-The cart system provides:
-
-- Added food items
-- Item quantity
-- Item price
-- Total price
-- Edit cart
-- Remove items
-- Quantity management
-- Checkout navigation
-
----
-
-## 💳 Payment
-
-The application supports multiple payment methods.
-
-### Payment Methods
-
-- 💵 Cash
-- 💳 Visa
-- 💳 Mastercard
-- 🅿️ PayPal
-
-Users can:
-
-- Select payment method
-- Add a new card
-- View saved card
-- Enter card information
-- Confirm payment
+* Personal information
+* Edit profile
+* Address management
+* Add address
+* Edit address
+* Delete address
 
 ---
 
-## 🎉 Payment Success
+# ✨ Animations & Interactive UI
 
-After successful payment, the application displays:
+The application also includes **UI animations and interactive elements** to make the experience smoother and more engaging.
 
-- Payment confirmation
-- Success message
-- Order continuation
-- Navigation to order tracking
+Animation/interaction areas include:
 
----
+* 🚀 Splash screen transitions
+* 🔄 Screen navigation transitions
+* 🎯 Category selection feedback
+* 🛒 Cart quantity interactions
+* ❤️ Food interaction buttons
+* 💳 Payment selection feedback
+* 📦 Order status interactions
+* 🧭 Bottom navigation selection
+* 🎨 Button and card interactions
+* 🪄 Dialog and overlay interactions
 
-## 📍 Order Tracking
-
-Users can track their order through a dedicated tracking screen.
-
-Features include:
-
-- Restaurant information
-- Estimated delivery time
-- Order status
-- Delivery progress
-- Delivery person information
-- Call delivery person
-- Message delivery person
-- Map/tracking interface
+The animation work focuses on keeping the UI smooth while maintaining the Figma-inspired design.
 
 ---
 
-## 📦 My Orders
-
-The My Orders section contains:
-
-### Ongoing Orders
-
-Users can view:
-
-- Restaurant
-- Order number
-- Price
-- Number of items
-- Order date
-- Track Order
-- Cancel Order
-
-### Order History
-
-Completed and canceled orders are displayed separately.
-
-Users can:
-
-- Rate completed orders
-- Re-order previous orders
-- View order status
-
----
-
-## 👤 Profile
-
-The profile section provides:
-
-- Personal information
-- Edit profile
-- Address management
-- Add new address
-- Address information
-- Profile settings
-
----
-
-## 📍 Address Management
-
-Users can:
-
-- View saved addresses
-- Add a new address
-- Edit address
-- Delete address
-- Select address type
-
-Address types can include:
-
-- HOME
-- WORK
-
----
-
-# 🧭 Bottom Navigation
-
-The application uses a bottom navigation system for the main sections.
+# 🧭 Application Flow
 
 ```text
-┌─────────────────────────────────────────┐
-│                                         │
-│              Application                │
-│                                         │
-├─────────────────────────────────────────┤
-│  🏠       📋       🛒       👤          │
-│ Home    Orders    Cart    Profile       │
-└─────────────────────────────────────────┘
-````
-
-The bottom navigation remains available while navigating through the application's internal screens.
+                    ┌──────────────┐
+                    │    Splash    │
+                    └──────┬───────┘
+                           ↓
+                    ┌──────────────┐
+                    │     Login    │
+                    └──────┬───────┘
+                           ↓
+                    ┌──────────────┐
+                    │     Home     │
+                    └──────┬───────┘
+                           │
+             ┌─────────────┼─────────────┐
+             ↓             ↓             ↓
+          Search       Categories    Restaurant
+             │             │             │
+             └─────────────┼─────────────┘
+                           ↓
+                    ┌──────────────┐
+                    │ Food Details │
+                    └──────┬───────┘
+                           ↓
+                    ┌──────────────┐
+                    │     Cart     │
+                    └──────┬───────┘
+                           ↓
+                    ┌──────────────┐
+                    │   Payment    │
+                    └──────┬───────┘
+                           ↓
+                 ┌───────────────────┐
+                 │ Payment Successful│
+                 └─────────┬─────────┘
+                           ↓
+                    ┌──────────────┐
+                    │   Tracking   │
+                    └──────────────┘
+```
 
 ---
 
-# 🏗️ Architecture
+# 🧱 Architecture
 
-The project follows **Clean Architecture** principles.
+The application follows **Clean Architecture**.
 
 ```text
 lib/
@@ -273,29 +209,17 @@ lib/
 │   └── widgets/
 │
 └── features/
-    │
     ├── home/
-    │
     ├── food_details/
-    │
     ├── restaurant/
-    │
     ├── cart/
-    │
     ├── payment/
-    │
     ├── tracking/
-    │
     ├── my_orders/
-    │
     └── profile/
 ```
 
----
-
-# 🔄 Clean Architecture Flow
-
-The application follows this general data flow:
+### Architecture Flow
 
 ```text
 UI
@@ -304,50 +228,18 @@ BLoC
  ↓
 Use Case
  ↓
-Repository Interface
- ↓
-Repository Implementation
+Repository
  ↓
 Data Source
  ↓
 Local Data / API
 ```
 
-### Presentation Layer
-
-Responsible for:
-
-* Pages
-* Widgets
-* BLoC
-* Events
-* States
-
-### Domain Layer
-
-Responsible for:
-
-* Entities
-* Repository contracts
-* Use cases
-* Business rules
-
-### Data Layer
-
-Responsible for:
-
-* Models
-* Data sources
-* Repository implementations
-* Local/API data handling
-
 ---
 
-# 🧠 State Management
+# 🔄 BLoC State Management
 
-The application uses **BLoC** for state management.
-
-BLoC separates UI from business logic.
+BLoC is used to separate UI from application logic.
 
 ```text
 User Action
@@ -360,7 +252,7 @@ User Action
      ↓
    State
      ↓
-     UI
+    UI
 ```
 
 Example:
@@ -371,7 +263,35 @@ context.read<HomeBloc>().add(
 );
 ```
 
-The BLoC processes the event and emits a new state.
+---
+
+# 🎨 Figma to Flutter
+
+This project was developed using a provided **Figma Food Delivery App design**.
+
+Development process:
+
+```text
+Figma Design
+     ↓
+Analyze UI
+     ↓
+Identify Screens
+     ↓
+Export Assets
+     ↓
+Create Flutter Widgets
+     ↓
+Implement UI
+     ↓
+Add Navigation
+     ↓
+Implement BLoC
+     ↓
+Add Interactions & Animations
+     ↓
+Test Application
+```
 
 ---
 
@@ -381,15 +301,10 @@ The BLoC processes the event and emits a new state.
 lib/
 │
 ├── core/
-│   │
 │   ├── constants/
-│   │
 │   ├── routes/
-│   │
 │   ├── theme/
-│   │
 │   ├── utils/
-│   │
 │   └── widgets/
 │       └── main_screen.dart
 │
@@ -439,195 +354,140 @@ lib/
 
 ---
 
-# 🎨 UI / Design
+# 🧰 Technologies
 
-The application UI was implemented from a **Figma Food Delivery App design**.
-
-The development process included:
-
-```text
-Figma Design
-     ↓
-Analyze Screen
-     ↓
-Identify Components
-     ↓
-Export Assets
-     ↓
-Create Flutter Widgets
-     ↓
-Implement Screens
-     ↓
-Add Navigation
-     ↓
-Connect BLoC
-     ↓
-Test UI
-```
-
-The application uses reusable Flutter widgets for:
-
-* Food cards
-* Category cards
-* Search bars
-* Buttons
-* Order cards
-* Address cards
-* Payment cards
-* Navigation elements
+| Technology         | Usage                  |
+| ------------------ | ---------------------- |
+| Flutter            | Mobile App Development |
+| Dart               | Programming Language   |
+| BLoC               | State Management       |
+| Clean Architecture | Project Architecture   |
+| Figma              | UI/UX Reference        |
+| SVG                | Icons & Graphics       |
+| Git                | Version Control        |
+| GitHub             | Source Code Management |
+| Android Studio     | Development            |
+| VS Code            | Development            |
 
 ---
 
-# 🖼️ Assets
-
-Application assets include:
-
-```text
-assets/
-│
-├── images/
-│   ├── food_logo.svg
-│   ├── splash_top.svg
-│   ├── splash_bottom.svg
-│   ├── burger.png
-│   ├── pizza.png
-│   ├── hotdog.png
-│   └── rose_garden.png
-│
-└── icons/
-    ├── cash.svg
-    ├── visa.svg
-    ├── master.svg
-    └── paypal.svg
-```
-
----
-
-# 🔀 Application Flow
+# 📱 Main Screens
 
 ```text
 Splash
-   ↓
 Login
-   ↓
-Home
-   │
-   ├── Search
-   │
-   ├── Categories
-   │
-   ├── Restaurant
-   │
-   └── Food Details
-          ↓
-        Cart
-          ↓
-      Checkout
-          ↓
-      Payment
-          ↓
-   Payment Success
-          ↓
-      Tracking
-```
-
----
-
-# 🔐 Authentication Flow
-
-```text
-Login
- │
- ├──→ Home
- │
- └──→ Forgot Password
-          ↓
-      Verification
-          ↓
-         Login
-
 Sign Up
-   ↓
- Home
+Forgot Password
+Verification
+
+Home
+Search
+Food Category
+Restaurant Details
+Food Details
+
+Cart
+Edit Cart
+
+Payment Method
+Add Card
+Payment Success
+
+Order Tracking
+Delivery Man Call
+Delivery Man Message
+
+My Orders
+
+Profile
+Personal Information
+Edit Profile
+My Address
+Add Address
 ```
 
 ---
 
-# 📦 Technologies Used
+# 🎓 Week 8 Internship
 
-| Technology         | Purpose                        |
-| ------------------ | ------------------------------ |
-| Flutter            | Mobile application development |
-| Dart               | Programming language           |
-| BLoC               | State management               |
-| Clean Architecture | Application architecture       |
-| Figma              | UI/UX design reference         |
-| SVG                | Vector assets                  |
-| Git                | Version control                |
-| GitHub             | Source code hosting            |
-| Android Studio     | Development                    |
-| VS Code            | Development                    |
+## Owasoft Technologies Pvt. Ltd.
+
+**Internship:** Flutter Development Internship
+**Project:** Food Delivery App
+**Week:** Week 8
+**Role:** Flutter Developer Intern
+
+### Week 8 Work
+
+During Week 8, I worked on converting a provided Figma Food Delivery App design into a Flutter application.
+
+### Main Tasks
+
+* Analyzed the Figma design
+* Created Flutter screen layouts
+* Converted Figma components into Flutter widgets
+* Created reusable UI components
+* Implemented navigation
+* Implemented BLoC state management
+* Applied Clean Architecture
+* Developed food browsing screens
+* Developed food details
+* Developed cart functionality
+* Developed payment screens
+* Developed order tracking
+* Developed My Orders
+* Developed profile screens
+* Implemented address management
+* Added UI interactions and animations
+* Fixed Flutter and Gradle issues
+* Tested the application
 
 ---
 
-# 📚 Flutter Concepts Used
+# 📚 Learning Outcomes
 
-The project demonstrates practical use of:
+Through this Week 8 project, I strengthened my practical knowledge of:
 
-* StatelessWidget
-* StatefulWidget
-* Scaffold
-* SafeArea
-* Column
-* Row
-* Stack
-* Container
-* ListView
-* GridView
-* GestureDetector
-* Navigator
-* MaterialPageRoute
-* BlocProvider
-* BlocBuilder
-* BlocListener
-* BLoC Events
-* BLoC States
-* Models
-* Entities
-* Repository
+* Flutter UI development
+* Dart
+* Figma-to-Flutter conversion
+* Clean Architecture
+* BLoC
+* Events and States
+* Repository Pattern
 * Use Cases
 * Data Sources
-* Clean Architecture
-* Reusable Widgets
-* Form validation
-* TextEditingController
-* Dialogs
-* SVG assets
-* Local data handling
+* Navigation
+* Nested navigation
+* Reusable widgets
+* Responsive UI
+* Animation and interaction
+* Git and GitHub
+* Debugging Flutter applications
 
 ---
 
 # 🛠️ Installation
 
-## 1. Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/SaudMasood/food-delivery-app.git
 ```
 
-## 2. Open Project
+### Open Project
 
 ```bash
 cd food-delivery-app
 ```
 
-## 3. Get Dependencies
+### Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-## 4. Run Application
+### Run Application
 
 ```bash
 flutter run
@@ -635,21 +495,21 @@ flutter run
 
 ---
 
-# 📱 Build APK
+# 📦 Build APK
 
-To generate a release APK:
+### Release APK
 
 ```bash
 flutter build apk --release
 ```
 
-Generated APK:
+APK location:
 
 ```text
 build/app/outputs/flutter-apk/app-release.apk
 ```
 
-For architecture-specific APKs:
+### Split APK
 
 ```bash
 flutter build apk --split-per-abi
@@ -659,7 +519,7 @@ flutter build apk --split-per-abi
 
 # 🧹 Clean Build
 
-If you face Flutter or Gradle build issues:
+If you experience Flutter or Gradle build problems:
 
 ```bash
 flutter clean
@@ -669,132 +529,49 @@ flutter build apk --release
 
 ---
 
-# 🧪 Testing
-
-Before creating the final APK, check:
+# 🧪 Analyze Project
 
 ```bash
 flutter analyze
 ```
 
-Then:
-
-```bash
-flutter run
-```
-
-Test:
-
-* Navigation
-* Search
-* Categories
-* Food details
-* Cart
-* Payment
-* Orders
-* Profile
-* Address management
-* Bottom navigation
-
 ---
 
-# 🚀 Future Improvements
+# 🔮 Future Improvements
 
-Possible future improvements include:
+Possible future improvements:
 
 * Firebase Authentication
 * Firebase Firestore
-* Real restaurant API
-* Real food API
+* REST API integration
+* Real restaurant data
+* Real food ordering backend
 * Real payment gateway
 * Google Maps integration
-* Real-time order tracking
+* Real-time delivery tracking
 * Push notifications
-* User reviews
-* Restaurant dashboard
+* Restaurant management
 * Admin dashboard
-* Online order management
-* Backend API integration
-
----
-
-# 🎯 Internship Project
-
-This project was developed as part of my **Flutter Internship at Owasoft Technologies Pvt. Ltd.**
-
-### Internship
-
-**Owasoft Technologies Pvt. Ltd.**
-
-### Project
-
-**Food Delivery App**
-
-### Role
-
-**Flutter Developer Intern**
-
-### Main Responsibilities
-
-* Converted Figma UI into Flutter screens
-* Developed reusable widgets
-* Implemented application navigation
-* Implemented BLoC state management
-* Applied Clean Architecture
-* Developed food browsing functionality
-* Developed cart functionality
-* Developed payment screens
-* Developed order management
-* Developed profile and address management
-* Fixed Flutter and Gradle issues
-* Tested application UI and navigation
-
----
-
-# 📈 Learning Outcomes
-
-Through this project, I practiced:
-
-```text
-Flutter
-   ↓
-Dart
-   ↓
-UI Development
-   ↓
-Figma → Flutter
-   ↓
-Reusable Widgets
-   ↓
-Navigation
-   ↓
-BLoC
-   ↓
-Clean Architecture
-   ↓
-Repository Pattern
-   ↓
-Use Cases
-   ↓
-Application Development
-```
+* User reviews and ratings
 
 ---
 
 # 👨‍💻 Developer
 
-**Saud Masood**
+## Saud Masood
 
-BS Computer Science Student
-National Skills University, Islamabad
+**BS Computer Science Student**
+**National Skills University, Islamabad**
 
-### Skills
+**Flutter Developer Intern — Owasoft Technologies Pvt. Ltd.**
+
+### Technical Skills
 
 * Flutter
 * Dart
-* Firebase
 * BLoC
 * Clean Architecture
+* Firebase
 * REST APIs
 * Git & GitHub
 * Python
@@ -804,9 +581,9 @@ National Skills University, Islamabad
 
 ---
 
-# 🔗 Repository
+# 🔗 GitHub Repository
 
-GitHub:
+**Food Delivery App**
 
 [https://github.com/SaudMasood/food-delivery-app](https://github.com/SaudMasood/food-delivery-app)
 
@@ -814,14 +591,19 @@ GitHub:
 
 # 📄 License
 
-This project was developed for educational and internship purposes.
+This project was developed for **educational and internship purposes**.
 
 ---
 
 <p align="center">
-  Made with ❤️ using Flutter
-</p>
 
-<p align="center">
-  <b>Food Delivery App • Owasoft Technologies Internship</b>
+### 🍔 Food Delivery App
+
+**Week 8 Flutter Internship Project**
+
+**Owasoft Technologies Pvt. Ltd.**
+
+Made with ❤️ using Flutter
+
 </p>
+```
